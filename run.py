@@ -37,6 +37,12 @@ def careers():
     return render_template("careers.html", page_title="Careers")
 
 
+@app.route("/get_books")
+def get_books():
+    books = mongo.db.books.find()
+    return render_template("get_books.html", books=books)
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
