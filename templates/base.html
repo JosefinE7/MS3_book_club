@@ -20,6 +20,7 @@
 			href="{{ url_for('static', filename='css/clean-blog.min.css')}}"
 			type="text/css"
 		/>
+		<!-- Custom css file -->
 		<link
 			rel="stylesheet"
 			href="{{ url_for('static', filename='css/style.css')}}"
@@ -144,9 +145,9 @@
 			integrity="sha512-3yGteaiMnpsxSo0LHYMpODezVs6NjMZ6vFyRoqQK4WcRhacpMCgUsQ4yfu5GtcMoWf2zjDP5ENtmx1+eCCtKXw=="
 			crossorigin="anonymous"
 		></script>
-
-		<!-- Custom scripts for this template -->
 		<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+
+		<!-- Custom scripts -->
 		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 		{% block script %} {% endblock %}
 	</body>
