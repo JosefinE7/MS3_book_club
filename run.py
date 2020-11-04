@@ -1,7 +1,11 @@
 import os
 from flask import Flask, render_template
+if os.path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
+
+# Routing for index.html, about.html, contact.html and careers.html
 
 
 @app.route("/")
@@ -26,6 +30,6 @@ def careers():
 
 if __name__ == "__main__":
     app.run(
-        host=os.environ.get("IP", "0.0.0.0"),
-        port=int(os.environ.get("PORT", "5000")),
+        host=os.environ.get("IP"),
+        port=int(os.environ.get("PORT")),
         debug=True)
