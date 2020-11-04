@@ -22,19 +22,19 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html", page_title="About")
+@app.route("/profile")
+def profile():
+    return render_template("profile.html", page_title="Profile")
 
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html", page_title="Contact")
+@app.route("/add_book")
+def add_book():
+    return render_template("add_book.html", page_title="Add Book")
 
 
-@app.route("/careers")
-def careers():
-    return render_template("careers.html", page_title="Careers")
+@app.route("/manage_genres")
+def manage_genres():
+    return render_template("manage_genres.html", page_title="Manage Genres")
 
 
 @app.route("/get_books")
