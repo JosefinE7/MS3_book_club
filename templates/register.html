@@ -1,54 +1,48 @@
 {% extends "base.html" %}{% block content %}
+
 <h1 class="text-center">{{ page_title }}</h1>
+
 <hr class="mt-5 mb-5" />
+
 <div class="row">
 	<!-- Card -->
 	<div class="card col-md-8 offset-md-2">
-
 		<!-- Card body -->
 		<div class="card-body">
-
 			<!-- Material form register -->
-			<form>
+			<form method="POST" action="{{ url_for('register') }}">
 				<p class="h4 text-center py-4">Sign up</p>
-
 				<!-- Material input text -->
 				<div class="md-form">
 					<i class="fa fa-user prefix grey-text"></i>
 					<input id="username" name="username" type="text" class="form-control">
 					<label for="username" class="font-weight-light">Your name</label>
 				</div>
-
 				<!-- Material input email -->
 				<div class="md-form">
 					<i class="fa fa-envelope prefix grey-text"></i>
 					<input type="email" id="user_email" name="user_email" class="form-control">
 					<label for="user_email" class="font-weight-light">Your email</label>
 				</div>
-
 				<!-- Material input email -->
 				<div class="md-form">
 					<i class="fa fa-exclamation-triangle prefix grey-text"></i>
 					<input type="email" id="user_email_confirm" name="user_email_confirm" class="form-control">
 					<label for="user_email_confirm" class="font-weight-light">Confirm your email</label>
 				</div>
-
 				<!-- Material input password -->
 				<div class="md-form">
 					<i class="fa fa-lock prefix grey-text"></i>
 					<input type="password" id="user_password" name="user_password" class="form-control">
 					<label for="user_password" class="font-weight-light">Your password</label>
 				</div>
-
 				<div class="text-center py-4 mt-3">
 					<button class="btn btn-unique btn-lg" type="submit">Register</button>
 				</div>
 			</form>
 			<!-- Material form register -->
-
 		</div>
 		<!-- Card body -->
-
 	</div>
 	<!-- Card -->
 </div>
