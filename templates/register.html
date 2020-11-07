@@ -20,6 +20,10 @@
 						name="username"
 						type="text"
 						class="form-control"
+						minlength="5"
+						maxlength="15"
+						pattern="^[a-zA-Z0-9]{5,15}$"
+						required
 					/>
 					<label for="username" class="font-weight-light">Username</label>
 				</div>
@@ -31,6 +35,10 @@
 						id="password"
 						name="password"
 						class="form-control"
+						minlength="5"
+						maxlength="15"
+						pattern="^[a-zA-Z0-9]{5,15}$"
+						required
 					/>
 					<label for="user_password" class="font-weight-light"
 						>Your password</label
