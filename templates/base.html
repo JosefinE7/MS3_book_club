@@ -121,11 +121,13 @@
 		</header>
 
 		<section>
-			<!-- Flashed messages -->
-			{% with messages = get_flash_messages() %} {% if messages %} {% for
+			<!-- flash messages -->
+			{% with messages = get_flashed_messages() %} {% if messages %} {% for
 			message in messages %}
-			<div class="row flashes alert alert-info" role="alert">
-				<h4 class="">{{ message }}</h4>
+			<div class="container">
+				<div class="row flashes">
+					<h4 class="text-center">{{ message }}</h4>
+				</div>
 			</div>
 			{% endfor %} {% endif %} {% endwith %}
 		</section>
