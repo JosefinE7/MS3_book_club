@@ -10,60 +10,14 @@
 		<!-- Card body -->
 		<div class="card-body">
 			<!-- Material form register -->
-			<form>
-				<p class="h4 text-center py-4">Sign up</p>
-				<!-- Material input text -->
-				<div class="md-form">
-					<i class="fa fa-user-cog prefix grey-text"></i>
-					<input
-						id="username"
-						name="username"
-						type="text"
-						class="form-control"
-						minlength="5"
-						maxlength="15"
-						pattern="^[a-zA-Z0-9]{5,15}$"
-						required
-					/>
-					<label for="username" class="font-weight-light">Username</label>
-				</div>
-				<!-- Material input password -->
-				<div class="md-form">
-					<i class="fa fa-lock prefix grey-text"></i>
-					<input
-						type="password"
-						id="password"
-						name="password"
-						class="form-control"
-						minlength="5"
-						maxlength="15"
-						pattern="^[a-zA-Z0-9]{5,15}$"
-						required
-					/>
-					<label for="user_password" class="font-weight-light"
-						>Your password</label
-					>
-				</div>
-				<div class="text-center py-4 mt-3">
-					<button class="btn btn-unique btn-lg" type="submit">Log In</button>
-				</div>
-			</form>
+			<div>
+				<h3 class="text-center">{{ username }}'s Profile</h3>
+			</div>
 			<!-- Material form register -->
 		</div>
 		<!-- Card body -->
 	</div>
 	<!-- Card -->
-</div>
-
-<div class="row">
-	<div class="col-12">
-		<p class="text-center">
-			New Here?
-			<a class="text-info" href="{{ url_for('register') }}"
-				>Register Account!</a
-			>
-		</p>
-	</div>
 </div>
 
 {% endblock %}
