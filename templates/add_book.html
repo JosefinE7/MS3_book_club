@@ -10,15 +10,14 @@
 			<form method="POST" action="{{ url_for('add_book') }}">
 				<!-- Material genre selection-->
 				<div class="md-form">
+					<div><i class="fa fa-book prefix grey-text"></i></div>
 					<select
 						id="genre_name"
 						name="genre_name"
-						class="browser-default custom-select validate"
+						class="browser-default md-select custom-select validate"
 						required
 					>
-						<option class="font-weight-light grey-text" selected>
-							Book Genre
-						</option>
+						<option class="font-weight-light grey" selected>Book Genre</option>
 						{% for genre in genres%}
 						<option class="font-weight-light" value="{{ genre.genre_name }}">
 							{{ genre.genre_name }}
