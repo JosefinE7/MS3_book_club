@@ -7,7 +7,8 @@
 		<!-- Card body -->
 		<div class="card-body">
 			<!-- Material form register -->
-			<form method="POST" action="">
+			<form method="POST" action="{{ url_for('add_book') }}">
+				<!-- Material genre selection-->
 				<div class="md-form">
 					<select
 						id="genre_name"
@@ -62,7 +63,7 @@
 					<input
 						id="book_pages"
 						name="book_pages"
-						minlength="5"
+						minlength="1"
 						maxlength="10"
 						type="text"
 						class="form-control validate"
@@ -88,8 +89,11 @@
 						>Book Description</label
 					>
 				</div>
+				<!-- Submit button -->
 				<div class="text-center py-4 mt-3">
-					<button class="btn btn-unique btn-lg" type="submit">Add Book</button>
+					<button class="btn btn-unique btn-lg" type="submit">
+						Add Book <i class="far fa-plus-square right"></i>
+					</button>
 				</div>
 			</form>
 			<!-- Material form register -->
