@@ -1,8 +1,0 @@
-{% extends "base.html" %}{% block content %}
-<h1>{{ page_title }}</h1>
-{% for book in books %} {{ book.book_name }}<br />
-{{ book.book_author}}<br />
-{{ book.genre_name}}<br />
-{{ book.book_pages}}<br />
-{{ book.book_description }}<br />
-{% endfor %} {% endblock %}

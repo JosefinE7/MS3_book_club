@@ -21,7 +21,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    books = mongo.db.books.find()
+    return render_template("index.html", books=books)
 
 
 @app.route("/add_book")
@@ -32,12 +33,6 @@ def add_book():
 @app.route("/manage_genres")
 def manage_genres():
     return render_template("manage_genres.html", page_title="Manage Genres")
-
-
-@app.route("/get_books")
-def get_books():
-    books = mongo.db.books.find()
-    return render_template("get_books.html", books=books)
 
 
 @app.route("/register", methods=["GET", "POST"])
