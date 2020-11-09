@@ -8,6 +8,24 @@
 		<div class="card-body">
 			<!-- Material form register -->
 			<form method="POST" action="">
+				<div class="md-form">
+					<select
+						id="genre_name"
+						name="genre_name"
+						class="browser-default custom-select validate"
+						required
+					>
+						<option class="font-weight-light grey-text" selected>
+							Book Genre
+						</option>
+						{% for genre in genres%}
+						<option class="font-weight-light" value="{{ genre.genre_name }}">
+							{{ genre.genre_name }}
+						</option>
+						{% endfor %}
+					</select>
+					<label for="genre_name" class="font-weight-light"></label>
+				</div>
 				<!-- Material input book name -->
 				<div class="md-form">
 					<i class="fa fa-book prefix grey-text"></i>
@@ -17,7 +35,7 @@
 						minlength="5"
 						maxlength="50"
 						type="text"
-						class="form-control"
+						class="form-control validate"
 						required
 					/>
 					<label for="book_name" class="font-weight-light">Book Name</label>
@@ -31,7 +49,7 @@
 						minlength="5"
 						maxlength="50"
 						type="text"
-						class="form-control"
+						class="form-control validate"
 						required
 					/>
 					<label for="book_author" class="font-weight-light"
@@ -47,7 +65,7 @@
 						minlength="5"
 						maxlength="10"
 						type="text"
-						class="form-control"
+						class="form-control validate"
 						required
 					/>
 					<label for="book_pages" class="font-weight-light"
@@ -58,7 +76,7 @@
 				<div class="md-form">
 					<i class="fa fa-pen prefix grey-text"></i>
 					<textarea
-						class="md-textarea form-control"
+						class="md-textarea form-control validate"
 						id="book_description"
 						name="book_description"
 						minlength="5"
@@ -68,14 +86,6 @@
 					></textarea>
 					<label for="book_description" class="font-weight-light"
 						>Book Description</label
-					>
-				</div>
-				<!-- Material input password -->
-				<div class="md-form">
-					<i class="fa fa-user-circle prefix grey-text"></i>
-					<input type="password" id="password" class="form-control" required />
-					<label for="user_password" class="font-weight-light"
-						>Your password</label
 					>
 				</div>
 				<div class="text-center py-4 mt-3">
