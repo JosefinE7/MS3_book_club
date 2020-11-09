@@ -70,6 +70,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url_for('index') }}">Home</a>
 						</li>
+						{% if session.user %}
 						<li class="nav-item">
 							<a
 								class="nav-link"
@@ -88,6 +89,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
 						</li>
+						{% else %}
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url_for('login') }}">Log In</a>
 						</li>
@@ -99,6 +101,7 @@
 								>Get books (mongodb connected)</a
 							>
 						</li>
+						{% endif %}
 					</ul>
 				</div>
 			</div>
