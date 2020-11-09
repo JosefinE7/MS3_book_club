@@ -8,11 +8,67 @@
 		<div class="card-body">
 			<!-- Material form register -->
 			<form method="POST" action="">
-				<!-- Material input text -->
+				<!-- Material input book name -->
 				<div class="md-form">
-					<i class="fa fa-user-circle prefix grey-text"></i>
-					<input id="username" type="text" class="form-control" required />
-					<label for="username" class="font-weight-light">Username</label>
+					<i class="fa fa-book prefix grey-text"></i>
+					<input
+						id="book_name"
+						name="book_name"
+						minlength="5"
+						maxlength="50"
+						type="text"
+						class="form-control"
+						required
+					/>
+					<label for="book_name" class="font-weight-light">Book Name</label>
+				</div>
+				<!-- Material input book author -->
+				<div class="md-form">
+					<i class="fa fa-user prefix grey-text"></i>
+					<input
+						id="book_author"
+						name="book_author"
+						minlength="5"
+						maxlength="50"
+						type="text"
+						class="form-control"
+						required
+					/>
+					<label for="book_author" class="font-weight-light"
+						>Name of Author</label
+					>
+				</div>
+				<!-- Material input book pages -->
+				<div class="md-form">
+					<i class="fa fa-book-open prefix grey-text"></i>
+					<input
+						id="book_pages"
+						name="book_pages"
+						minlength="5"
+						maxlength="10"
+						type="text"
+						class="form-control"
+						required
+					/>
+					<label for="book_pages" class="font-weight-light"
+						>Amount of pages</label
+					>
+				</div>
+				<!-- Material textarea book discription -->
+				<div class="md-form">
+					<i class="fa fa-pen prefix grey-text"></i>
+					<textarea
+						class="md-textarea form-control"
+						id="book_description"
+						name="book_description"
+						minlength="5"
+						maxlength="500"
+						rows="2"
+						required
+					></textarea>
+					<label for="book_description" class="font-weight-light"
+						>Book Description</label
+					>
 				</div>
 				<!-- Material input password -->
 				<div class="md-form">
