@@ -25,11 +25,6 @@ def index():
     return render_template("index.html", books=books)
 
 
-@app.route("/add_book")
-def add_book():
-    return render_template("add_book.html", page_title="Add Book")
-
-
 @app.route("/manage_genres")
 def manage_genres():
     return render_template("manage_genres.html", page_title="Manage Genres")
@@ -104,6 +99,11 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_book")
+def add_book():
+    return render_template("add_book.html", page_title="Add Book")
 
 
 if __name__ == "__main__":
