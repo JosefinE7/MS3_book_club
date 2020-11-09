@@ -42,7 +42,7 @@
 					class="btn btn-primary btn-sm px-3"
 					type="button"
 					data-toggle="collapse"
-					data-target="#collapseExample"
+					data-target="#example{{ loop.index }}"
 					aria-expanded="false"
 					aria-controls="collapseExample"
 				>
@@ -52,7 +52,7 @@
 			<!-- / Collapse buttons -->
 
 			<!-- Collapsible element -->
-			<div class="collapse" id="collapseExample">
+			<div class="collapse" id="example{{ loop.index }}">
 				<div class="mt-3">{{ book.book_description }}</div>
 			</div>
 		</div>
