@@ -24,11 +24,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/profile")
-def profile():
-    return render_template("profile.html", page_title="Profile")
-
-
 @app.route("/add_book")
 def add_book():
     return render_template("add_book.html", page_title="Add Book")
