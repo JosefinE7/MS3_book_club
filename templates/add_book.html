@@ -17,7 +17,9 @@
 						class="browser-default md-select custom-select validate"
 						required
 					>
-						<option class="font-weight-light grey" selected>Book Genre</option>
+						<option value="" class="font-weight-light grey" selected>
+							Book Genre
+						</option>
 						{% for genre in genres%}
 						<option class="font-weight-light" value="{{ genre.genre_name }}">
 							{{ genre.genre_name }}
@@ -80,8 +82,8 @@
 						id="book_description"
 						name="book_description"
 						minlength="5"
-						maxlength="500"
-						rows="2"
+						maxlength="1000"
+						rows="4"
 						required
 					></textarea>
 					<label for="book_description" class="font-weight-light"
