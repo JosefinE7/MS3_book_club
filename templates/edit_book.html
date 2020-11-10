@@ -19,13 +19,15 @@
 						class="browser-default md-select custom-select validate"
 						required
 					>
-						<option value="" class="font-weight-light grey" selected>
+						<option value="" class="font-weight-light grey">
 							Book Genre
 						</option>
 						{% for genre in genres%}
-						<option class="font-weight-light" value="{{ genre.genre_name }}">
-							{{ genre.genre_name }}
-						</option>
+                            {% if genre.genre_name == book.genre_name %}
+                                <option class="font-weight-light" value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+                            {% else %}
+						        <option class="font-weight-light" value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                            {% endif %} 
 						{% endfor %}
 					</select>
 					<label for="genre_name" class="font-weight-light"></label>
@@ -40,6 +42,7 @@
 						maxlength="50"
 						type="text"
 						class="form-control validate"
+                        value="{{ book.book_name }}"
 						required
 					/>
 					<label for="book_name" class="font-weight-light">Book Name</label>
@@ -54,11 +57,11 @@
 						maxlength="50"
 						type="text"
 						class="form-control validate"
+                        value="{{ book.book_author }}"
 						required
 					/>
 					<label for="book_author" class="font-weight-light"
-						>Name of Author</label
-					>
+						>Name of Author</label>
 				</div>
 				<!-- Material input book pages -->
 				<div class="md-form">
@@ -70,11 +73,11 @@
 						maxlength="10"
 						type="text"
 						class="form-control validate"
+                        value="{{ book.book_pages }}"
 						required
 					/>
 					<label for="book_pages" class="font-weight-light"
-						>Amount of pages</label
-					>
+						>Amount of pages</label>
 				</div>
 				<!-- Material textarea book discription -->
 				<div class="md-form">
@@ -87,16 +90,18 @@
 						maxlength="1000"
 						rows="4"
 						required
-					></textarea>
-					<label for="book_description" class="font-weight-light"
-						>Book Description</label
 					>
+                     {{- book.book_description -}} </textarea>
+					<label for="book_description" class="font-weight-light"
+						>Book Description</label>
 				</div>
-				<!-- Submit button -->
+				<!-- Submit and cancel button-->
 				<div class="text-center py-4 mt-3">
-					<button class="btn btn-unique btn-lg" type="submit">
+					<button class="btn btn-info" type="submit">
 						Edit Book <i class="far fa-edit right"></i>
 					</button>
+					<a href="{{ url_for('index') }}"
+						class="btn btn-success ">Cancel<i class="fas fa-times-circle right"></i></a>
 				</div>
 			</form>
 			<!-- Material form register -->
