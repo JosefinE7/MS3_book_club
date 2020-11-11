@@ -1,8 +1,9 @@
-{% extends "base.html" %}{% block content %}
+{% extends "base.html" %}
+{% block content %}
 <div class="row">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="post-preview">
-			<a href="post.html">
+			<a href="#">
 				<h2 class="post-title">
 					Man must explore, and this is exploration at its greatest
 				</h2>
@@ -19,14 +20,15 @@
 		<hr />
 	</div>
 </div>
+
 <div class="row">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="media-body">
-			<form action="{{ url_for('search') }}" method="post" class="col-12">
+			<form action="{{ url_for('search') }}" method="post">
 				<div class="row text-center">
 					<div class="md-form">
 						<i class="fas fa-search prefix grey-text left"></i>
-						<input type="text" name="query" id="query" minlength="3"  class="validate" required>
+						<input type="text" name="query" id="query" minlength="3" class="validate" required>
 						<label for="query"> Search Book</label>
 					</div>
 					<div>
@@ -91,4 +93,5 @@
 	</div>
 	{% endfor %}
 </div>
+
 {% endblock %}
