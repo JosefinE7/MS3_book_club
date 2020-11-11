@@ -25,11 +25,6 @@ def index():
     return render_template("index.html", books=books)
 
 
-@app.route("/manage_genres")
-def manage_genres():
-    return render_template("manage_genres.html", page_title="Manage Genres")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -145,6 +140,12 @@ def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Book Successfully deleted")
     return redirect(url_for("index"))
+
+
+@app.route("/manage_genres")
+def manage_genres():
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
+    return render_template("manage_genres.html", genres=genres, page_title="Manage Genres")
 
 
 if __name__ == "__main__":

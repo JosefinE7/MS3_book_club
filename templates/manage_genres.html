@@ -1,3 +1,30 @@
 {% extends "base.html" %}{% block content %}
 <h1 class="text-center">{{ page_title }}</h1>
+
+<hr />
+
+<div class="row">
+	{% for genre in genres %}
+	<!-- Card -->
+	<div class="card col-md-4 py-2 mt-3">
+		<!-- Card body -->
+		<div class="media genre_boxes py-2 mt-1">
+			<!-- Material genre selection-->
+			<div class="md-form">
+				<div>
+					<h6 class="text-center">{{ genre.genre_name }}</h6>
+				</div>
+			</div>
+			<!-- Submit button -->
+			<div class="text-center  py-2 mt-1">
+				<a href="" class="btn btn-info btn-sm"><i class="fas fa-pen"></i> Edit</a>
+				<a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
+			</div>
+			<!-- Material form register -->
+		</div>
+		<!-- Card body -->
+	</div>
+	{% endfor %}
+	<!-- Card -->
+</div>
 {% endblock %}
