@@ -25,6 +25,13 @@ def index():
     return render_template("index.html", books=books)
 
 
+@app.route("/seach", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template("index.html", books=books)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
