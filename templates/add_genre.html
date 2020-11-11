@@ -1,0 +1,38 @@
+{% extends "base.html" %}{% block content %}
+<h1 class="text-center">{{ page_title }}</h1>
+
+<div class="row">
+	<!-- Card -->
+	<div class="card col-md-8 offset-md-2">
+		<!-- Card body -->
+		<div class="card-body">
+			<!-- Material form register -->
+			<form method="POST" action="{{ url_for('add_genre') }}">
+				<!-- Material input genre name -->
+				<div class="md-form">
+					<i class="fa fa-folder-open prefix grey-text"></i>
+					<input
+						id="genre_name"
+						name="genre_name"
+						minlength="3"
+						maxlength="25"
+						type="text"
+						class="form-control validate"
+						required
+					/>
+					<label for="genre_name" class="font-weight-light">Genre Name</label>
+				</div>
+				<!-- Submit button -->
+				<div class="text-center py-4 mt-3">
+					<button class="btn btn-unique btn-lg" type="submit">
+						Add Genre <i class="far fa-plus-square right"></i>
+					</button>
+				</div>
+			</form>
+			<!-- Material form register -->
+		</div>
+		<!-- Card body -->
+	</div>
+	<!-- Card -->
+</div>
+{% endblock %}
