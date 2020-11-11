@@ -21,23 +21,29 @@
 </div>
 <div class="row">
 	<div class="col-lg-8 col-md-10 mx-auto">
-		<form action="{{ url_for('search') }}" method="post" class="col-12">
-			<div class="row text-center">
-				<div class="input-field col-12 col-md-8">
-					<i class="fas fa-search prefix grey-text"></i>
-					<input type="text" name="query" id="query" minlength="3"  class="validate" required>
-					<label for="query">Search Book</label>
+		<div class="media-body">
+			<form action="{{ url_for('search') }}" method="post" class="col-12">
+				<div class="row text-center">
+					<div class="md-form">
+						<i class="fas fa-search prefix grey-text left"></i>
+						<input type="text" name="query" id="query" minlength="3"  class="validate" required>
+						<label for="query"> Search Book</label>
+					</div>
+					<div>
+						<div class="pt-4 px-3">
+							<button type="submit" class="btn btn-info btn-sm px-3"><i class="fas fa-search left"></i> Search</button>
+							<a href="{{ url_for('index') }}"
+								class="btn btn-danger btn-sm px-3"><i class="fas fa-sync-alt left"></i> Reset</a>
+						</div>
+					</div>
 				</div>
-				<div class="col-12 col-md-4">
-					<a href="{{ url_for('index') }}" class="btn btn-danger">Reset</a>
-					<button type="submit" class="btn btn-info">
-                    <i class="fas fa-search left"></i> Search
-                    </button>
-				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 </div>
+
+<hr>
+
 <div class="row">
 	{% for book in books %}
 	<div class="col-lg-8 col-md-10 mx-auto">
