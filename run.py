@@ -16,7 +16,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# Routing for index.html, about.html, contact.html and careers.html
+# Routing and functions for all templates
 
 
 @app.route("/")
@@ -27,14 +27,18 @@ def index():
 
 @app.route("/seach", methods=["GET", "POST"])
 def search():
-    query = request.form.get("query")
-    books = list(mongo.db.books.find({"$text": {"$search": query}}))
-    return render_template("index.html", books=books)
+    if request.method == "POST":
+        query = request.form.get("query")
+        books = list(mongo.db.books.find({"$text": {"$search": query}}))
+        return render_template("index.html", books=books)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "POST":
+    if request.method == "GET":
+        return render_template("register.html", page_title="Register")
+
+    else:
         # Check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -53,7 +57,6 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("register.html", page_title="Register")
 
 
 @app.route("/login", methods=["GET", "POST"])
