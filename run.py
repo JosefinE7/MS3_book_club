@@ -181,7 +181,7 @@ def edit_genre(genre_id):
         return redirect(url_for("manage_genres"))
 
     genre = mongo.db.genres.find_one({"_id": ObjectId(genre_id)})
-    return render_template("edit_genre.html", genre=genre, page_title="Edit Genre")
+    return render_template("edit_genre.html", genre=genre)
 
 
 @app.route("/delete_genre/<genre_id>")
