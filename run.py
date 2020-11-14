@@ -92,7 +92,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username, page_title="Profile")
+        return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
 
@@ -122,7 +122,7 @@ def add_book():
         return redirect(url_for("index"))
 
     genres = mongo.db.genres.find().sort("category_name", 1)
-    return render_template("add_book.html", genres=genres, page_title="Add Book")
+    return render_template("add_book.html", genres=genres)
 
 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
@@ -141,7 +141,7 @@ def edit_book(book_id):
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     genres = mongo.db.genres.find().sort("category_name", 1)
-    return render_template("edit_book.html", book=book, genres=genres, page_title="Edit Book")
+    return render_template("edit_book.html", book=book, genres=genres)
 
 
 @app.route("/delete_book/<book_id>")
@@ -154,20 +154,20 @@ def delete_book(book_id):
 @app.route("/manage_genres")
 def manage_genres():
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
-    return render_template("manage_genres.html", genres=genres, page_title="Manage Genres")
+    return render_template("manage_genres.html", genres=genres)
 
 
 @app.route("/add_genre", methods=["GET", "POST"])
 def add_genre():
-    if request.method == "POST":
-        genre = {
-            "genre_name": request.form.get("genre_name")
-        }
-        mongo.db.genres.insert_one(genre)
-        flash("New Genre Added!")
-        return redirect(url_for("manage_genres"))
+    if request.method == "GET":
+        return render_template("add_genre.html")
 
-    return render_template("add_genre.html", page_title="Add Genre")
+    genre = {
+        "genre_name": request.form.get("genre_name")
+    }
+    mongo.db.genres.insert_one(genre)
+    flash("New Genre Added!")
+    return redirect(url_for("manage_genres"))
 
 
 @app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
