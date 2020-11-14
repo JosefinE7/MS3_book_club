@@ -1,6 +1,6 @@
 {% extends "base.html" %}{% block content %}
 
-<h1 class="text-center">{{ page_title }}</h1>
+<h1 class="text-center">Log In</h1>
 
 <hr class="mt-5 mb-5" />
 
@@ -41,7 +41,8 @@
 						required
 					/>
 					<label for="user_password" class="font-weight-light"
-						>Your password</label>
+						>Your password</label
+					>
 				</div>
 				<div class="text-center py-4 mt-3">
 					<button class="btn btn-success btn-lg" type="submit">Log In</button>
@@ -58,7 +59,9 @@
 	<div class="col-12">
 		<p class="text-center">
 			New Here?
-			<a class="text-info" href="{{ url_for('register') }}">Register Account!</a>
+			<a class="text-info" href="{{ url_for('register') }}"
+				>Register Account!</a
+			>
 		</p>
 	</div>
 </div>
