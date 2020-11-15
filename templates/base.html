@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+			type="text/css"
+		/>
+		<!-- Google Fonts -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+			type="text/css"
+		/>
+		<!-- Bootstrap core CSS -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<!-- Material Design Bootstrap -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Start Bootstrap Clean Blog theme -->
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/clean-blog.min.css') }}"
+			type="text/css"
+		/>
+		<!-- Custom css file -->
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css')}}"
+			type="text/css"
+		/>
+		{% block styles %} {% endblock %}
+		<title>Conservative Book Club</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" />
-	<!-- Google Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-		type="text/css" />
-	<!-- Bootstrap core CSS -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
-		type="text/css" />
-	<!-- Material Design Bootstrap -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
-	<!-- Start Bootstrap Clean Blog theme -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
-		type="text/css" />
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css" />
-	<!-- Custom css file -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css" />
-	{% block styles %} {% endblock %}
-	<title>Conservative Book Club</title>
-</head>
-
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand" href="{{ url_for('index') }}">CBC</a>
-			<button
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand" href="{{ url_for('index') }}">CBC</a>
+				<button
 					class="navbar-toggler navbar-toggler-right"
 					type="button"
 					data-toggle="collapse"
@@ -40,134 +63,151 @@
 					Menu
 					<i class="fas fa-bars"></i>
 				</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('index') }}">Home</a>
-					</li>
-					{% if session.user %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('add_book') }}">Add Book</a>
-					</li>
-					{% if session.user|lower == "adminje"|lower %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('manage_genres') }}">Manage Genres</a>
-					</li>
-					{% endif %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
-					</li>
-					{% else %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('login') }}">Log In</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('register') }}">Register</a>
-					</li>
-					{% endif %}
-				</ul>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('index') }}">Home</a>
+						</li>
+						{% if session.user %}
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								href="{{ url_for('profile', username=session['user']) }}"
+								>Profile</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('add_book') }}">Add Book</a>
+						</li>
+						{% if session.user|lower == "adminje"|lower %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('manage_genres') }}"
+								>Manage Genres</a
+							>
+						</li>
+						{% endif %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+						</li>
+						{% else %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('register') }}">Register</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
 
-	<!-- Page Header -->
-	<header class="masthead" style="
+		<!-- Page Header -->
+		<header
+			class="masthead"
+			style="
 				background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5a/Books_HD_%288314929977%29.jpg');
-			">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<div class="site-heading">
-						<h1>Conservative Book Club</h1>
-						<span class="subheading">Great books from the Right</span>
+			"
+		>
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-10 mx-auto">
+						<div class="site-heading">
+							<h1>Conservative Book Club</h1>
+							<span class="subheading">Great books from the Right</span>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</header>
+		</header>
 
-	<section>
-		<!-- flash messages -->
-		{% with messages = get_flashed_messages() %} {% if messages %} {% for
+		<section>
+			<!-- flash messages -->
+			{% with messages = get_flashed_messages() %} {% if messages %} {% for
 			message in messages %}
-		<div class="container">
-			<div class="row flashes">
-				<h4 class="text-center">{{ message }}</h4>
+			<div class="container">
+				<div class="row flashes">
+					<h4 class="text-center">{{ message }}</h4>
+				</div>
 			</div>
-		</div>
-		{% endfor %} {% endif %} {% endwith %}
-	</section>
+			{% endfor %} {% endif %} {% endwith %}
+		</section>
 
-	<!-- Main Content -->
-	<div class="container">{% block content %} {% endblock %}</div>
+		<!-- Main Content -->
+		<div class="container">{% block content %} {% endblock %}</div>
 
-	<hr />
+		<hr />
 
-	<!-- Footer -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<h6 class="text-center post-meta">
-						Want to get in contact with me?
-					</h6>
-					<ul class="list-inline text-center py-2">
-						<li class="list-inline-item">
-							<a href="#">
-								<span class="fa-stack fa-lg">
+		<!-- Footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-10 mx-auto">
+						<h6 class="text-center post-meta">
+							Want to get in contact with me?
+						</h6>
+						<ul class="list-inline text-center py-2">
+							<li class="list-inline-item">
+								<a href="https://www.twitter.com/thestekiz" target="_blank">
+									<span class="fa-stack fa-lg">
 										<i class="fas fa-circle fa-stack-2x"></i>
 										<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
 									</span>
-							</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">
-								<span class="fa-stack fa-lg">
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a
+									href="https://www.facebook.com/josefin.ekstrom.98"
+									target="_blank"
+								>
+									<span class="fa-stack fa-lg">
 										<i class="fas fa-circle fa-stack-2x"></i>
 										<i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
 									</span>
-							</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">
-								<span class="fa-stack fa-lg">
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="https://www.instagram.com/thestekiz/" target="_blank">
+									<span class="fa-stack fa-lg">
 										<i class="fas fa-circle fa-stack-2x"></i>
 										<i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
 									</span>
-							</a>
-						</li>
-					</ul>
-					<p class="copyright text-muted">
-						Copyright &copy; Conservative Book Club
-						<span id="copyright"></span>
-					</p>
+								</a>
+							</li>
+						</ul>
+						<p class="copyright text-muted">
+							Copyright &copy; Conservative Book Club
+							<span id="copyright"></span>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-	<!-- Bootstrap tooltips -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
-	</script>
-	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript"
-		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js">
-	</script>
-	<!-- Start Bootstrap Clean Blog scripts -->
-	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+		<!-- Bootstrap tooltips -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+		></script>
+		<!-- Bootstrap core JavaScript -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+		></script>
+		<!-- MDB core JavaScript -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
+		></script>
+		<!-- Start Bootstrap Clean Blog scripts -->
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
 
-	<!-- Custom scripts -->
-	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-	{% block script %} {% endblock %}
-</body>
-
+		<!-- Custom scripts -->
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+		{% block script %} {% endblock %}
+	</body>
 </html>

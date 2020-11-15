@@ -48,7 +48,7 @@ For this project I unfortunately don’t have a physical mockup, the mockup I cr
 
 **Footer**
 
-- In the footer element there is a small header referring to the social media icon links provided underneath. The links are currently not connected to any actual social media accounts due to the fact that this is a school project and the "real" person behind the admin of the website doesn’t actually exist.
+- In the footer element there is a small header referring to the social media icon links provided underneath. The links are currently connected to my own social media accounts.
 
 ### Features left to implement
 
