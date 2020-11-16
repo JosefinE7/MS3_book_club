@@ -95,7 +95,42 @@ The technologies used when creating this website is as follows:
 
 ## Testing
 
-ASK SANDEEP!
+### Testing Navbar
+1. Go to Home page
+1. Hover mouse over all navbar anchor links
+1. Home, Log In, Register, Profile, Add Book, Add Genre and Log Out section all react by changing color when hovered over
+1. Click Home, Log In, Register, Profile, Add Book, Add Genre and Log Out navitems
+1. All navbar items connects to the top of intended page 
+1. Test successful
+
+### Testing Home page
+#### Testing paragraph link:
+1. Click on Home tab in navbar
+1. scroll down underneath header and paragraphs explaining the website
+1. Hover mouse over *Sign up* anchor 
+1. Anchor reacts to hovering
+1. Click anchor 
+1. Clicking anchor brings me to *Register* page
+1. Test successful 
+
+#### Testing search bar:
+1. Click on Home tab in navbar
+1. Scroll down to search bar element
+1. Click the search bar input
+1. Search bar reacts and text is able to be put in 
+1. Try to search with an empty field
+1. Unable to search, get a message requesting me to fill in field
+1. Write *Orwell* in search bar 
+1. Click *Search* button
+1. Matches to *Orwell* show up
+1. Search author test successful
+1. Click *Reset* button
+1. Click brings me back to Home page
+1. Reset test successful
+1. Write *oRWell* in search bar 
+
+
+
 
 **Screen sizes**
 
