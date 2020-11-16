@@ -24,7 +24,7 @@ For this project I unfortunately don’t have a physical mockup, the mockup I cr
 
 **Home page**
 
-- The Home page contains a couple of main elements, starting with a hero image displaying books at the top of the page, as well as a two headers and a paragraph introducing the website to the user. Just below this is a search bar where the user can search books already added to the website, by searching through either book name or book author. Underneath the search bar, all books added to the website are displayed. The books are displayed in card form and contains: a book image, book genre, book name, book author, amount of book pages as well as a personalized description of the book by the person recommending the book which expands when the “description” button is clicked. If the user is logged in to the website there will be two additional buttons displaying next to the description button reading edit and delete to the books they themselves have added.
+- The Home page contains a couple of main elements, starting with a hero image displaying books at the top of the page, as well as a two headers and a paragraph introducing the website to the user. Just below this is a search bar where the user can search books already added to the website, by searching through either book name or book author. Underneath the search bar, all books added to the website are displayed. The books are displayed in card form and contains: a sample book image, book genre, book name, book author, amount of book pages, link where the user can find more information as well as a personalized description of the book by the person recommending the book which expands when the “description” button is clicked. If the user is logged in to the website there will be two additional buttons displaying next to the description button reading edit and delete to the books they themselves have added.
 
 **Log In page**
 
@@ -36,11 +36,11 @@ For this project I unfortunately don’t have a physical mockup, the mockup I cr
 
 **Profile page**
 
-- The profile page is reached either through the Log In or Register page, and is the first page the user is taken to after logging in. At the top of the page is a header displaying the words: “Profile of ‘Users Name’”. Below are the books the user in question has added to the website with the same display structure as on the Home page: displaying the book: genre, book cover, name, author, amount of pages, personalized description as well as an edit and delete function.
+- The profile page is reached either through the Log In or Register page, and is the first page the user is taken to after logging in. At the top of the page is a header displaying the words: “Profile of ‘Users Name’”. Below are the books the user in question has added to the website with the same display structure as on the Home page: displaying the book: genre, name, author, amount of pages, link and personalized description as well as an edit and delete function.
 
 **Add Book page**
 
-- The Add Book page is the page where the users can add new books. The page has an Add Book heading, underneath is a form element. The form first asks under what genre the book fits in, as this project is submitted there are six available genres to choose from. After this there are text inputs asking for the book: name, author, amount of pages, personalized description as well as an optional field asking for link of the book cover. At the bottom there is a submit button with the text "Add Book".
+- The Add Book page is the page where the users can add new books. The page has an Add Book heading, underneath is a form element. The form first asks under what genre the book fits in, as this project is submitted there are six available genres to choose from. After this there are text inputs asking for the book: name, author, amount of pages, link and a personalized description. At the bottom there is a submit button with the text "Add Book".
 
 **Manage Genres page**
 
@@ -56,7 +56,7 @@ For this project I unfortunately don’t have a physical mockup, the mockup I cr
 
 - In the future I am looking to add a Zoom meeting extension to the website to make it possible for users to have virtual book club meetings, to this way be able to make the interaction between members even more personal.
 
-* As the page grows in users, the I want to provide the admin with a way to attach affiliate links to the books, for the purpose of making money on each click to Amazon/ other purchasing websites.
+* Right now it is up to the user to add a link to the book they are adding for other users to be able to check out more information/ purchase the book. This is only a temporary solution however and I hope to, if the website grows in popularity, to make the admin be the one to add all the links. To that way be able to make money off the site by affiliate links.
 
 - I was originally trying to include the book cover of every book in the image element next to each book, however trying this out I realised that I did not have enough time to implement this properly and I faced the possibility of users adding images in all different sizes and messing with the layout of the site. I ultimately decided against including the book covers but I hope to implement this in the future.
 ## Technologies used
@@ -105,7 +105,7 @@ The technologies used when creating this website is as follows:
 1. Test successful
 
 ### Testing Home page
-#### Testing paragraph link:
+#### Testing *Sign up* link:
 1. Click on Home tab in navbar
 1. Scroll down underneath header and paragraphs explaining the website
 1. Hover mouse over *Sign up* anchor 
@@ -138,6 +138,16 @@ The technologies used when creating this website is as follows:
 1. Click *Reset* button
 1. Click brings me back to Home page
 1. Second reset test successful
+
+#### Testing *For More Information* link:
+1. Click on Home tab in navbar
+1. Scroll down to first book element
+1. Hover mouse over *For More Information* anchor in book element
+1. Anchor reacts to hovering
+1. Click anchor 
+1. Clicking anchor opens a new tab in the browser window to the books Amazon page
+1. Test successful 
+
 
 #### Book description button:
 1. Click on Home tab in navbar
