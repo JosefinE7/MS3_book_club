@@ -58,6 +58,7 @@ For this project I unfortunately don’t have a physical mockup, the mockup I cr
 
 * As the page grows in users, the I want to provide the admin with a way to attach affiliate links to the books, for the purpose of making money on each click to Amazon/ other purchasing websites.
 
+- I was originally trying to include the book cover of every book in the image element next to each book, however trying this out I realised that I did not have enough time to implement this properly and I faced the possibility of users adding images in all different sizes and messing with the layout of the site. I ultimately decided against including the book covers but I hope to implement this in the future.
 ## Technologies used
 
 The technologies used when creating this website is as follows:
@@ -334,7 +335,8 @@ The technologies used when creating this website is as follows:
 
 **Bugs**
 
-- In the add*book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog* theme and _Material Design for Bootstrap_ styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
+- In the add\_book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog* theme and _Material Design for Bootstrap_ styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
+*  The navbar does not stick to the top of the page when scrolling down only while scrolling up, I tried switching around styling in the css file as well as using Bootstrap class names but I can not seem to fix it. I am aiming to resolve  this issue as soon as possible, but as of handing in this project (17/11/20) I have still not found a solution.
 
 ## Deployment
 
