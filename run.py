@@ -131,7 +131,7 @@ def add_book():
         mongo.db.books.insert_one(book)
         flash("Book Added Successfully!")
         return redirect(url_for("index"))
-    
+
     # displays genres in select element and renders add_book.html
     genres = mongo.db.genres.find().sort("category_name", 1)
     return render_template("add_book.html", genres=genres)
@@ -152,8 +152,7 @@ def edit_book(book_id):
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Book Edited Successfully!")
         return redirect(url_for("index"))
-
-    # displays current book and genre information ready for editing 
+    # displays current book and genre information ready for editing
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     genres = mongo.db.genres.find().sort("category_name", 1)
     # renders edit_genre.html
@@ -170,7 +169,7 @@ def delete_book(book_id):
 
 @app.route("/manage_genres")
 def manage_genres():
-   # displays all current genres and renders manage_genre.html
+    # displays all current genres and renders manage_genre.html
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
     return render_template("manage_genres.html", genres=genres)
 
