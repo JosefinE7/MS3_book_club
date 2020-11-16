@@ -39,7 +39,7 @@
 						maxlength="50"
 						type="text"
 						class="form-control validate"
-						required
+                        required
 					/>
 					<label for="book_name" class="font-weight-light">Book Name</label>
 				</div>
@@ -56,8 +56,7 @@
 						required
 					/>
 					<label for="book_author" class="font-weight-light"
-						>Name of Author</label
-					>
+						>Name of Author</label>
 				</div>
 				<!-- Material input book pages -->
 				<div class="md-form">
@@ -72,8 +71,21 @@
 						required
 					/>
 					<label for="book_pages" class="font-weight-light"
-						>Amount of pages</label
-					>
+						>Amount of pages</label>
+				</div>
+				<!-- Material input book link -->
+				<div class="md-form">
+					<i class="fas fa-external-link-alt  prefix grey-text"></i>
+					<input
+						id="book_link"
+						name="book_link"
+						minlength="5"
+						maxlength="50"
+						type="text"
+						class="form-control validate"
+                        required
+					/>
+					<label for="book_link" class="font-weight-light">Link where book can be found</label>
 				</div>
 				<!-- Material textarea book discription -->
 				<div class="md-form">
@@ -88,17 +100,15 @@
 						required
 					></textarea>
 					<label for="book_description" class="font-weight-light"
-						>Book Description</label
-					>
+						>Book Description</label>
 				</div>
 				<!-- Submit button -->
 				<div class="text-center py-4 mt-3">
 					<button class="btn btn-success" type="submit">
 						Add Book <i class="far fa-plus-square right"></i>
 					</button>
-					<a href="{{ url_for('index') }}" class="btn btn-danger"
-						>Cancel <i class="fas fa-times-circle right"></i
-					></a>
+					<a href="{{ url_for('index') }}" class="btn btn-danger">Cancel
+						<i class="fas fa-times-circle right"></i></a>
 				</div>
 			</form>
 			<!-- Material form register -->
