@@ -16,17 +16,20 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# Routing and functions for all templates
+# Start routing and functions for all templates:
 
 
 @app.route("/")
 def index():
+    # gets all books from db
     books = mongo.db.books.find()
+    # renders index.html template
     return render_template("index.html", books=books)
 
 
 @app.route("/seach", methods=["GET", "POST"])
 def search():
+    # enables search function from db
     if request.method == "POST":
         query = request.form.get("query")
         books = list(mongo.db.books.find({"$text": {"$search": query}}))
@@ -35,6 +38,7 @@ def search():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # renders register.html template
     if request.method == "GET":
         return render_template("register.html")
 
@@ -43,26 +47,31 @@ def register():
     existing_user = mongo.db.users.find_one(
         {"username": get_user})
 
+    # redirects user to register.html to create new username
     if existing_user:
         flash("Username already exists!")
         return redirect(url_for("register"))
 
+    # registers new user
     register = {
         "username": get_user,
         "password": generate_password_hash(request.form.get("password"))
     }
+    # inserts user into db
     mongo.db.users.insert_one(register)
 
     # put the new user into 'session' cookie
     session["user"] = get_user
     flash("Registration Successful!")
+    # renders profile.html for session user
     return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # renders login.html template
     if request.method == "GET":
-        return render_template("login.html", page_title="Log In")
+        return render_template("login.html")
 
     # check if username exists in db
     existing_user = mongo.db.users.find_one(
@@ -91,9 +100,11 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    # return profile page for user
     if session["user"]:
         return render_template("profile.html", username=username)
 
+    # redirect to login
     return redirect(url_for("login"))
 
 
@@ -118,15 +129,17 @@ def add_book():
             "created_by": session["user"]
         }
         mongo.db.books.insert_one(book)
-        flash("Book Add Successful!")
+        flash("Book Added Successfully!")
         return redirect(url_for("index"))
-
+    
+    # displays genres in select element and renders add_book.html
     genres = mongo.db.genres.find().sort("category_name", 1)
     return render_template("add_book.html", genres=genres)
 
 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
+    # saves edited book into db
     if request.method == "POST":
         submit = {
             "genre_name": request.form.get("genre_name"),
@@ -137,28 +150,34 @@ def edit_book(book_id):
             "created_by": session["user"]
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
-        flash("Book Edit Successful!")
+        flash("Book Edited Successfully!")
+        return redirect(url_for("index"))
 
+    # displays current book and genre information ready for editing 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     genres = mongo.db.genres.find().sort("category_name", 1)
+    # renders edit_genre.html
     return render_template("edit_book.html", book=book, genres=genres)
 
 
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
+    # deletes book from db
     mongo.db.books.remove({"_id": ObjectId(book_id)})
-    flash("Book Successfully deleted")
+    flash("Book Successfully Deleted")
     return redirect(url_for("index"))
 
 
 @app.route("/manage_genres")
 def manage_genres():
+   # displays all current genres and renders manage_genre.html
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
     return render_template("manage_genres.html", genres=genres)
 
 
 @app.route("/add_genre", methods=["GET", "POST"])
 def add_genre():
+    # adds new genre to db
     if request.method == "GET":
         return render_template("add_genre.html")
 
@@ -172,6 +191,7 @@ def add_genre():
 
 @app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
 def edit_genre(genre_id):
+    # edits existing genre in db
     if request.method == "POST":
         submit = {
             "genre_name": request.form.get("genre_name")
@@ -180,12 +200,14 @@ def edit_genre(genre_id):
         flash("Genre Successfully Updated!")
         return redirect(url_for("manage_genres"))
 
+    # displays current genres and renders edit_genre.html
     genre = mongo.db.genres.find_one({"_id": ObjectId(genre_id)})
     return render_template("edit_genre.html", genre=genre)
 
 
 @app.route("/delete_genre/<genre_id>")
 def delete_genre(genre_id):
+    # deletes exsisting genre from db
     mongo.db.genres.remove({"_id": ObjectId(genre_id)})
     flash("Genre Successfully Removed")
     return redirect(url_for("manage_genres"))
