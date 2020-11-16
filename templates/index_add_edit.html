@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+	<div class="col-lg-8 col-md-10 mx-auto">
+		<div class="post-preview">
+			<h1 class="post-title">I am going to read 5000 books before I die</h1>
+			<h3 class="post-subtitle font-weight-light">
+				Needless to say I need your help finding books to read!
+			</h3>
+
+			<p class="post-meta">Posted by Josefin on September 17, 2020</p>
+		</div>
+		<hr />
+	</div>
+</div>
+
+<div class="row">
+	{% for book in books %}
+	<div class="col-lg-8 col-md-10 mx-auto">
+		<div class="media">
+			<img
+				class="d-flex mr-3"
+				src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg"
+				alt="Generic placeholder image"
+			/>
+			<div class="media-body">
+				<h5 class="mt-0 font-weight-bold">{{ book.book_name }}</h5>
+				<strong>Author:</strong> {{ book.book_author}}<br />
+				<strong>Genre:</strong> {{ book.genre_name}}<br />
+				<strong>Book pages:</strong> {{ book.book_pages}}<br />
+				<em>Added by: {{ book.created_by }}</em>
+			</div>
+		</div>
+		<div>
+			<div>
+				<button
+					class="btn btn-primary btn-sm px-3"
+					type="button"
+					data-toggle="collapse"
+					data-target="#example{{ loop.index }}"
+					aria-expanded="false"
+					aria-controls="collapseExample"
+				>
+					<i class="fas fa-book-open"></i> Book Description
+				</button>
+				{% if session.user|lower == book.created_by|lower %}
+				<a
+					href="{{ url_for('edit_book', book_id=book._id) }}"
+					class="btn btn-success btn-sm"
+					><i class="fas fa-pen"></i> Edit</a
+				>
+				<a
+					href="{{ url_for('delete_book', book_id=book._id) }}"
+					class="btn btn-danger btn-sm"
+					><i class="fas fa-trash-alt"></i> Delete</a
+				>
+				{% endif %}
+			</div>
+			<!-- / Collapse buttons -->
+
+			<!-- Collapsible element -->
+			<div class="collapse" id="example{{ loop.index }}">
+				<div class="mt-3">{{ book.book_description }}</div>
+			</div>
+		</div>
+		<hr />
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

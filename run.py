@@ -131,8 +131,10 @@ def add_book():
             "created_by": session["user"]
         }
         mongo.db.books.insert_one(book)
+        # brings user to a cropped version of index.html
         flash("Book Added Successfully!")
-        return redirect(url_for("index"))
+        books = mongo.db.books.find()
+        return render_template("index_add_edit.html", books=books)
 
     # displays genres in select element and renders add_book.html
     genres = mongo.db.genres.find().sort("category_name", 1)
@@ -141,7 +143,7 @@ def add_book():
 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
-    # saves edited book into db
+    # saves edited book information into db
     if request.method == "POST":
         submit = {
             "genre_name": request.form.get("genre_name"),
@@ -152,8 +154,11 @@ def edit_book(book_id):
             "created_by": session["user"]
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
+        # brings user to a cropped version of index.html
         flash("Book Edited Successfully!")
-        return redirect(url_for("index"))
+        books = mongo.db.books.find()
+        return render_template("index_add_edit.html", books=books)
+
     # displays current book and genre information ready for editing
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     genres = mongo.db.genres.find().sort("category_name", 1)
