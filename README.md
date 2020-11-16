@@ -66,31 +66,31 @@ The technologies used when creating this website is as follows:
 
   - The project uses JQuery to simplify DOM manipulation, jQuery is crucial to almost all extensions on the page.
 
-- [Bootstrap](LINK)
+- [Bootstrap](https://getbootstrap.com/)
 
   - The project uses Bootstrap to provide a grid system, as well as basic layout and styling.
 
-- [Start Bootstrap](LINK)
+- [Start Bootstrap](https://startbootstrap.com/)
 
   - The project uses the Start Bootstarp Clean Blog Theme as base for the website design.
 
-- [Bootstrap Material Design](LINK)
+- [Bootstrap Material Design](https://mdbootstrap.com/)
 
   - The project uses Bootstrap Material Design to further style the website through additional Bootstrap code.
 
-- [Font Awesome](LINK)
+- [Font Awesome](https://fontawesome.com/)
 
   - The project uses Font Awesome to add icons.
 
-- [Google Fonts](LINK)
+- [Google Fonts](https://fonts.google.com/)
 
   - The project uses Google Fonts to style the website text.
 
-- [Mongodb](LINK)
+- [Mongodb](https://www.mongodb.com/)
 
   - The project uses the Mongo database to store and retrieve data from the website.
 
-- [Flask](LINK)
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
   - The project uses Flask for Python functionality.
 
 ## Testing
@@ -106,7 +106,7 @@ The technologies used when creating this website is as follows:
 ### Testing Home page
 #### Testing paragraph link:
 1. Click on Home tab in navbar
-1. scroll down underneath header and paragraphs explaining the website
+1. Scroll down underneath header and paragraphs explaining the website
 1. Hover mouse over *Sign up* anchor 
 1. Anchor reacts to hovering
 1. Click anchor 
@@ -128,8 +128,204 @@ The technologies used when creating this website is as follows:
 1. Click brings me back to Home page
 1. Reset test successful
 1. Write *oRWell* in search bar 
+1. Click *Search* button
+1. Matches to *Orwell* show up
+1. Search author test with capital and lowercase letters successful
+1. Uses search bar for *Housing*
+1. The book *The Housing Boom and Bust* shows up 
+1. Books search successful 
+1. Click *Reset* button
+1. Click brings me back to Home page
+1. Second reset test successful
 
+#### Book description button:
+1. Click on Home tab in navbar
+1. Scroll down to book element
+1. Hover mouse over *Book Description* button
+1. Button reacts to hovering
+1. Click *Book Description* button
+1. Button reacts by expanding and showing *Book Description* text
+1. Click *Book Description* button again
+1. Book description text disappears
+1. *Book Description* button test successful
 
+### Testing Log In page
+#### Logging in with already existing user:
+1. Click on Log In tab in navbar
+1. Click *Log In* button
+1. Error message appears asking user to fill in *Username* field
+1. Fill in existing username in *Username* field
+1. Click *Log In* button
+1. Error message appears asking user to fill in *Password* field
+1. Fill in password to existing username in *Password* field
+1. Click *Log In* button
+1. Login successfully takes me to users profile page
+1. Login successful
+
+#### Logging in with wrong password/user:
+1. Click on Log In tab in navbar
+1. Fill in existing username in *Username* field
+1. Fill in wrong password in *Password* field
+1. Click *Log In* button
+1. Redirected back to *Log In* page with “Incorrect Username and/or Password” message
+1. Fill in false username in *Username* field
+1. Fill in propper password to another user password in *Password* field
+1. Redirected back to *Log In* page with “Incorrect Username and/or Password” message
+1. “Incorrect Username and/or Password” test successful 
+
+#### Testing *New Here?* link:
+1. Click on Log In tab in navbar
+1. Scroll down underneath login form
+1. Hover mouse over *Register Account* anchor 
+1. Anchor reacts to hovering
+1. Click anchor 
+1. Clicking anchor brings me to *Register* page
+1. Test successful
+
+### Testing Register page
+#### Register with already existing user:
+1. Click on Register tab in navbar
+1. Click *Register* button
+1. Error message appears asking user to fill in *Username* field
+1. Fill in existing username in *Username* field
+1. Click *Register* button
+1. Error message appears asking user to fill in *Password* field
+1. Fill in password to existing username in *Password* field
+1. Click *Register* button
+1. Redirected back to *Register* page with “Username already exists!” message
+1. *Username already exists!* test successful
+1. Fill in new/ not previously existing username
+1. Fill in new/ not previously existing password
+1. Click *Register* button
+1. Register new user successful, click takes me to new users profile page
+1. Register new user successful 
+
+#### Testing *Already Registered?* link:
+1. Click on Register tab in navbar
+1. Scroll down underneath register form
+1. Hover mouse over *Log In* anchor 
+1. Anchor reacts to hovering
+1. Click anchor 
+1. Clicking anchor brings me to *Log In* page
+1. Test successful 
+
+### Testing Add Book page
+#### Testing adding book:
+1. Click on Add Book tab in navbar
+1. Click *Add Book* button
+1. Error message appears asking user to select *Book Genre* in selector
+1. Pick Economics
+1. Click *Add Book* button
+1. Error message appears asking user to fill in *Book Name* field
+1. Fill in *Wealth and Poverty*
+1. Click *Add Book* button
+1. Error message appears asking user to fill in *Book Author* field
+1. Fill in *George Gilder*
+1. Click *Add Book* button
+1. Error message appears asking user to fill in *Book amount pages* field
+1. Fill in *256*
+1. Click *Add Book* button
+1. Error message appears asking user to fill in *Book description* field
+1. Fill in book description (too long to include here)
+1. Click *Add Book* button
+1. Click takes me back to the Home page with the flash message of “Book Added Successfully!”
+1. Scroll down to bottom of added books
+1. *Wealth and Poverty* is successfully added
+1. Test successful
+
+#### Testing Add Book cancel button:
+1. Click on Add Book tab in navbar
+1. Scroll down to *Cancel* button
+1. Click *Cancel* button
+1. Click takes me back to Home page
+1. Test successful
+
+### Testing Profile page
+#### Testing book edit:
+1. Click on Profile tab in navbar
+1. Scroll down to *Wealth and Poverty* book mentioned above
+1. Click *Book Description* button
+1. Book description text appears 
+1. Click *Book Description* button
+1. Book description text disappears
+1. Book description button test successful
+1. Click *Edit* button
+1. All information previously added under the book “Wealth and Poverty” appears in all fields and select item
+1. Change *Book Genre* to *History*
+1. Click *Save* button
+1. Click takes me back to a shorter version of the Home page with the flash message of “Book Edited Successfully!”
+1. Scroll down to *Wealth and Poverty*
+1. *Wealth and Poverty* has successfully been changed
+1. Repeat and make changes in every field in *Wealth and Poverty* in edit form individually 
+1. Click *Save* button
+1. Click takes me back to a shorter version of the Home page with the flash message of “Book Edited Successfully!”
+1. Scroll down to *Wealth and Poverty*
+1. *Wealth and Poverty* has successfully been changed
+1. Test successful
+
+#### Testing book delete button:
+1. Click on Profile tab in navbar
+1. Scroll down to *Wealth and Poverty* book mentioned above
+1. Click *Delete* button
+1. Click takes me back to the Home TO PROFILE page with the flash message of “Book Successfully Deleted!”
+1. Scroll down to where *Wealth and Poverty* was previously
+1. *Wealth and Poverty* has successfully been deleted
+1. Test successful
+
+### Testing Log Out tab
+1. Login through * Log In* page 
+1. Arrive on *Profile* page
+1. Click on Log Out tab in navbar
+1. Click takes me back to Log In page with the flash message: “You have been logged out”
+1. Test successful
+
+### Testing Manage Genres page
+#### Testing add new genre:
+1. Log in as *admin*
+1. Arrive on *Profile* page
+1. Click on Manage Genres tab in navbar
+1. Click *Add New Genre* button
+1. Arrive on *Add Genre* page
+1. Write *Fantasy* on *Genre Name* input line
+1. Click takes me back to the Manage Genres page with the flash message: “New Genre Added!”
+1. Scroll down to look at existing genres
+1. *Fantasy* has successfully been added
+1. Test successful
+
+#### Testing edit genre:
+1. Log in as *admin*
+1. Click on Manage Genres tab in navbar
+1. Click *Edit* button next to *Fantasy* genre added in test above
+1. Arrive on *Edit Genre* page
+1. Change *Fantasy* to *Fanatsyyy* in *Genre Name* input line
+1. Click *Save Genre* button
+1. Click takes me back to the Manage Genres page with the flash message: “Genre Successfully Updated!”
+1. Scroll down to look at existing genres
+1. *Fantasy* now appears as *Fantasyyy*
+1. Test successful
+
+#### Testing delete genre:
+1. Log in as *admin*
+1. Click on Manage Genres tab in navbar
+1. Click *Delete* button next to *Fantasyyy* genre added in test above
+1. Click takes me back to the Manage Genres page with the flash message: “Genre Successfully Removed”
+1. Scroll down to look at existing genres
+1. *Fantasyyy* is no longer there
+1. Test successful
+
+### Testing footer section
+#### Testing footer links:
+1. Click on Home tab in navbar
+1. Scroll down to the bottom of the page website
+1. Hover mouse over all three social media icons 
+1. Icons react to hovering
+1. Click *Twitter* icon 
+1. Icon open twitter profile in separate browser tab  
+1. Click *Facebook* icon 
+1. Icon open facebook profile in separate browser tab
+1. Click *Instagram* icon 
+1. Icon open instagram profile in separate browser tab
+1. Test successful 
 
 
 **Screen sizes**
