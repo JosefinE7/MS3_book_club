@@ -33,11 +33,8 @@
 							<button type="submit" class="btn btn-info btn-sm px-3">
 								<i class="fas fa-search left"></i> Search
 							</button>
-							<a
-								href="{{ url_for('index') }}"
-								class="btn btn-danger btn-sm px-3"
-								><i class="fas fa-sync-alt left"></i> Reset</a
-							>
+							<a href="{{ url_for('index') }}"
+								class="btn btn-danger btn-sm px-3"><i class="fas fa-sync-alt left"></i> Reset</a>
 						</div>
 					</div>
 				</div>
@@ -53,7 +50,7 @@
 		<div class="media">
 			<img
 				class="d-flex mr-3"
-				src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg"
+				src="{{ url_for('static', filename='img/book.jpg') }}"
 				alt="Generic placeholder image"
 			/>
 			<div class="media-body">
@@ -77,16 +74,10 @@
 					<i class="fas fa-book-open"></i> Book Description
 				</button>
 				{% if session.user|lower == book.created_by|lower %}
-				<a
-					href="{{ url_for('edit_book', book_id=book._id) }}"
-					class="btn btn-success btn-sm"
-					><i class="fas fa-pen"></i> Edit</a
-				>
-				<a
-					href="{{ url_for('delete_book', book_id=book._id) }}"
-					class="btn btn-danger btn-sm"
-					><i class="fas fa-trash-alt"></i> Delete</a
-				>
+				<a href="{{ url_for('edit_book', book_id=book._id) }}"
+					class="btn btn-success btn-sm"><i class="fas fa-pen"></i> Edit</a>
+				<a href="{{ url_for('delete_book', book_id=book._id) }}"
+					class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
 				{% endif %}
 			</div>
 			<!-- / Collapse buttons -->
