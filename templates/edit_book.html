@@ -63,7 +63,8 @@
 						required
 					/>
 					<label for="book_author" class="font-weight-light"
-						>Name of Author</label>
+						>Name of Author</label
+					>
 				</div>
 				<!-- Material input book pages -->
 				<div class="md-form">
@@ -79,7 +80,8 @@
 						required
 					/>
 					<label for="book_pages" class="font-weight-light"
-						>Amount of pages</label>
+						>Amount of pages</label
+					>
 				</div>
 				<!-- Material textarea book discription -->
 				<div class="md-form">
@@ -93,17 +95,20 @@
 						rows="4"
 						required
 					>
-                     {{- book.book_description -}} </textarea>
+                     {{- book.book_description -}} </textarea
+					>
 					<label for="book_description" class="font-weight-light"
-						>Book Description</label>
+						>Book Description</label
+					>
 				</div>
 				<!-- Submit and cancel button-->
 				<div class="text-center py-4 mt-3">
-					<button class="btn btn-info" type="submit">
-						Edit Book <i class="far fa-edit right"></i>
+					<button class="btn btn-success" type="submit">
+						Save <i class="fas fa-check right"></i>
 					</button>
-					<a href="{{ url_for('index') }}"
-						class="btn btn-success">Cancel<i class="fas fa-times-circle right"></i></a>
+					<a href="{{ url_for('index') }}" class="btn btn-danger"
+						>Cancel<i class="fas fa-times-circle right"></i
+					></a>
 				</div>
 			</form>
 			<!-- Material form register -->
