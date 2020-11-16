@@ -93,6 +93,7 @@
 				<strong>Author:</strong> {{ book.book_author}}<br />
 				<strong>Genre:</strong> {{ book.genre_name}}<br />
 				<strong>Book pages:</strong> {{ book.book_pages}}<br />
+				<a href="{{ book.book_link }}" target="_blank">Further Information: <i class="fas fa-info"></i></a><br />
 				<em>Added by: {{ book.created_by }}</em>
 			</div>
 		</div>
@@ -119,7 +120,8 @@
 
 			<!-- Collapsible element -->
 			<div class="collapse" id="example{{ loop.index }}">
-				<div class="mt-3">{{ book.book_description }}</div>
+				<div class="mt-3">{{ book.book_description }}
+				</div>
 			</div>
 		</div>
 		<hr />

@@ -127,6 +127,7 @@ def add_book():
             "book_name": request.form.get("book_name"),
             "book_author": request.form.get("book_author"),
             "book_pages": request.form.get("book_pages"),
+            "book_link": request.form.get("book_link"),
             "book_description": request.form.get("book_description"),
             "created_by": session["user"]
         }
@@ -150,6 +151,7 @@ def edit_book(book_id):
             "book_name": request.form.get("book_name"),
             "book_author": request.form.get("book_author"),
             "book_pages": request.form.get("book_pages"),
+            "book_link": request.form.get("book_link"),
             "book_description": request.form.get("book_description"),
             "created_by": session["user"]
         }
