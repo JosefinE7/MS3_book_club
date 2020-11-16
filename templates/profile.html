@@ -3,21 +3,79 @@
 <h1 class="text-center">Profile of {{ username }}</h1>
 
 <hr class="mt-5 mb-5" />
+<div class="row">
+	<div class="col-lg-8 col-md-10 mx-auto">
+		<p class="text-center">Hello there {{ username }}!</p>
+		<p>
+			Welcome to the <span>Conservative Book Club</span>! Listed below you will
+			see all the books you have personally recommended. If you want to edit any
+			information in the books you have added click the
+			<span class="text-success">‘Edit’</span> button. If you want to remove a
+			book you have added, for any reason, you can delete them by clicking the
+			<span class="text-danger">‘Delete’</span> button. No one else will be able
+			to edit or delete any of the books you have added so don’t worry!
+		</p>
+		<p class="text-center">
+			I am very excited that you’re here, and I look forward to seeing all of
+			your book recommendations!
+		</p>
+	</div>
+</div>
+
+<hr />
 
 <div class="row">
-	<!-- Card -->
-	<div class="card col-md-8 offset-md-2">
-		<!-- Card body -->
-		<div class="card-body">
-			<!-- Material form register -->
-			<div>
-				<h3 class="text-center">adding books</h3>
+	{% for book in books %}
+	<div class="col-lg-8 col-md-10 mx-auto">
+		{% if session.user == book.created_by %}
+		<div class="media">
+			<img
+				class="d-flex mr-3"
+				src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg"
+				alt="Generic placeholder image"
+			/>
+			<div class="media-body">
+				<h5 class="mt-0 font-weight-bold">{{ book.book_name }}</h5>
+				<strong>Author:</strong> {{ book.book_author}}<br />
+				<strong>Genre:</strong> {{ book.genre_name}}<br />
+				<strong>Book pages:</strong> {{ book.book_pages}}<br />
+				<em>Added by: {{ book.created_by }}</em>
 			</div>
-			<!-- Material form register -->
 		</div>
-		<!-- Card body -->
+		<div>
+			<div>
+				<button
+					class="btn btn-primary btn-sm px-3"
+					type="button"
+					data-toggle="collapse"
+					data-target="#example{{ loop.index }}"
+					aria-expanded="false"
+					aria-controls="collapseExample"
+				>
+					<i class="fas fa-book-open"></i> Book Description
+				</button>
+				<a
+					href="{{ url_for('edit_book', book_id=book._id) }}"
+					class="btn btn-success btn-sm"
+					><i class="fas fa-pen"></i> Edit</a
+				>
+				<a
+					href="{{ url_for('delete_book', book_id=book._id) }}"
+					class="btn btn-danger btn-sm"
+					><i class="fas fa-trash-alt"></i> Delete</a
+				>
+			</div>
+			<!-- / Collapse buttons -->
+
+			<!-- Collapsible element -->
+			<div class="collapse" id="example{{ loop.index }}">
+				<div class="mt-3">{{ book.book_description }}</div>
+			</div>
+		</div>
+		<hr />
+		{% endif %}
 	</div>
-	<!-- Card -->
+	{% endfor %}
 </div>
 
 {% endblock %}
