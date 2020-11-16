@@ -131,8 +131,8 @@ def add_book():
             "created_by": session["user"]
         }
         mongo.db.books.insert_one(book)
-        # brings user to a cropped version of index.html
         flash("Book Added Successfully!")
+        # brings user to a cropped version of index.html
         books = mongo.db.books.find()
         return render_template("index_add_edit.html", books=books)
 
