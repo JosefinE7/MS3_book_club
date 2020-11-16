@@ -131,7 +131,7 @@ def add_book():
             "created_by": session["user"]
         }
         mongo.db.books.insert_one(book)
-        flash("Book Added Successfully!")
+        flash("Book Successfully Added!")
         # brings user to a cropped version of index.html
         books = mongo.db.books.find()
         return render_template("index_add_edit.html", books=books)
@@ -155,7 +155,7 @@ def edit_book(book_id):
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         # brings user to a cropped version of index.html
-        flash("Book Edited Successfully!")
+        flash("Book Successfully Edited!")
         books = mongo.db.books.find()
         return render_template("index_add_edit.html", books=books)
 
@@ -170,7 +170,7 @@ def edit_book(book_id):
 def delete_book(book_id):
     # deletes book from db
     mongo.db.books.remove({"_id": ObjectId(book_id)})
-    flash("Book Successfully Deleted")
+    flash("Book Successfully Deleted!")
     return redirect(url_for("index"))
 
 
@@ -215,7 +215,7 @@ def edit_genre(genre_id):
 def delete_genre(genre_id):
     # deletes exsisting genre from db
     mongo.db.genres.remove({"_id": ObjectId(genre_id)})
-    flash("Genre Successfully Removed")
+    flash("Genre Successfully Deleted!")
     return redirect(url_for("manage_genres"))
 
 
