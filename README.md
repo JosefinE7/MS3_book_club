@@ -14,7 +14,11 @@ The Conservative Book Club allows people to gather around great books within gen
 - As a person who is really new to the conservative point of view, I would like some book recommendations to get me started and really understand the core values from within all aspects of the point of view, ranging from economic to cultural.
 - As the admin of this site I love reading, in today's age I am able to take my passion for books and make a profit through affiliate links if the people who visit my site are interested in purchasing the books that get recommended on my site. What a great way to combine work and my favorite hobby!
 
-For this project I unfortunately don’t have a physical mockup, the mockup I created for this project is not relevant due to the fact that the mockup is centered around what I thought this project was supposed to be. Due to english not being my first language I later realized I had misunderstood the task and had to create something completely new. I decided to use the book club example provided to me by Code Institute as inspiration, as well as the Start Bootstrap Theme of “Clean Blog” as the base for my website design and decided to make up for lost time and just get to coding.
+![mockup 1](static/img/mockup_1.jpg)
+![mockup 2](static/img/mockup_2.jpg)
+![mockup 3](static/img/mockup_3.jpg)
+
+The mockups I have created for this project are somewhat lacking in creativity, in the beginning of this project I had originally created a mockup that ended up being irrelevant to this project due to the fact that I misunderstood what this project was supposed to focus on. Due to english not being my first language I later realized I had misunderstood the task instructions and I had to create something completely new. I decided to use the book club example provided to me by Code Institute as inspiration, as well as the Start Bootstrap Theme of “Clean Blog” as the base for my website design and decided to make up for lost time and just get to coding.
 
 ## Features
 
@@ -59,6 +63,7 @@ For this project I unfortunately don’t have a physical mockup, the mockup I cr
 * Right now it is up to the user to add a link to the book they are adding for other users to be able to check out more information/ purchase the book. This is only a temporary solution however and I hope to, if the website grows in popularity, to make the admin be the one to add all the links. To that way be able to make money off the site by affiliate links.
 
 - I was originally trying to include the book cover of every book in the image element next to each book, however trying this out I realised that I did not have enough time to implement this properly and I faced the possibility of users adding images in all different sizes and messing with the layout of the site. I ultimately decided against including the book covers but I hope to implement this in the future.
+
 ## Technologies used
 
 The technologies used when creating this website is as follows:
@@ -97,247 +102,271 @@ The technologies used when creating this website is as follows:
 ## Testing
 
 ### Testing Navbar
+
 1. Go to Home page
 1. Hover mouse over all navbar anchor links
 1. Home, Log In, Register, Profile, Add Book, Add Genre and Log Out section all react by changing color when hovered over
 1. Click Home, Log In, Register, Profile, Add Book, Add Genre and Log Out navitems
-1. All navbar items connects to the top of intended page 
+1. All navbar items connects to the top of intended page
 1. Test successful
 
 ### Testing Home page
-#### Testing *Sign up* link:
+
+#### Testing _Sign up_ link:
+
 1. Click on Home tab in navbar
 1. Scroll down underneath header and paragraphs explaining the website
-1. Hover mouse over *Sign up* anchor 
+1. Hover mouse over _Sign up_ anchor
 1. Anchor reacts to hovering
-1. Click anchor 
-1. Clicking anchor brings me to *Register* page
-1. Test successful 
+1. Click anchor
+1. Clicking anchor brings me to _Register_ page
+1. Test successful
 
 #### Testing search bar:
+
 1. Click on Home tab in navbar
 1. Scroll down to search bar element
 1. Click the search bar input
-1. Search bar reacts and text is able to be put in 
+1. Search bar reacts and text is able to be put in
 1. Try to search with an empty field
 1. Unable to search, get a message requesting me to fill in field
-1. Write *Orwell* in search bar 
-1. Click *Search* button
-1. Matches to *Orwell* show up
+1. Write _Orwell_ in search bar
+1. Click _Search_ button
+1. Matches to _Orwell_ show up
 1. Search author test successful
-1. Click *Reset* button
+1. Click _Reset_ button
 1. Click brings me back to Home page
 1. Reset test successful
-1. Write *oRWell* in search bar 
-1. Click *Search* button
-1. Matches to *Orwell* show up
+1. Write _oRWell_ in search bar
+1. Click _Search_ button
+1. Matches to _Orwell_ show up
 1. Search author test with capital and lowercase letters successful
-1. Uses search bar for *Housing*
-1. The book *The Housing Boom and Bust* shows up 
-1. Books search successful 
-1. Click *Reset* button
+1. Uses search bar for _Housing_
+1. The book _The Housing Boom and Bust_ shows up
+1. Books search successful
+1. Click _Reset_ button
 1. Click brings me back to Home page
 1. Second reset test successful
 
-#### Testing *For More Information* link:
+#### Testing _For More Information_ link:
+
 1. Click on Home tab in navbar
 1. Scroll down to first book element
-1. Hover mouse over *For More Information* anchor in book element
+1. Hover mouse over _For More Information_ anchor in book element
 1. Anchor reacts to hovering
-1. Click anchor 
+1. Click anchor
 1. Clicking anchor opens a new tab in the browser window to the books Amazon page
-1. Test successful 
-
+1. Test successful
 
 #### Book description button:
+
 1. Click on Home tab in navbar
 1. Scroll down to book element
-1. Hover mouse over *Book Description* button
+1. Hover mouse over _Book Description_ button
 1. Button reacts to hovering
-1. Click *Book Description* button
-1. Button reacts by expanding and showing *Book Description* text
-1. Click *Book Description* button again
+1. Click _Book Description_ button
+1. Button reacts by expanding and showing _Book Description_ text
+1. Click _Book Description_ button again
 1. Book description text disappears
-1. *Book Description* button test successful
+1. _Book Description_ button test successful
 
 ### Testing Log In page
+
 #### Logging in with already existing user:
+
 1. Click on Log In tab in navbar
-1. Click *Log In* button
-1. Error message appears asking user to fill in *Username* field
-1. Fill in existing username in *Username* field
-1. Click *Log In* button
-1. Error message appears asking user to fill in *Password* field
-1. Fill in password to existing username in *Password* field
-1. Click *Log In* button
+1. Click _Log In_ button
+1. Error message appears asking user to fill in _Username_ field
+1. Fill in existing username in _Username_ field
+1. Click _Log In_ button
+1. Error message appears asking user to fill in _Password_ field
+1. Fill in password to existing username in _Password_ field
+1. Click _Log In_ button
 1. Login successfully takes me to users profile page
 1. Login successful
 
 #### Logging in with wrong password/user:
-1. Click on Log In tab in navbar
-1. Fill in existing username in *Username* field
-1. Fill in wrong password in *Password* field
-1. Click *Log In* button
-1. Redirected back to *Log In* page with “Incorrect Username and/or Password” message
-1. Fill in false username in *Username* field
-1. Fill in propper password to another user password in *Password* field
-1. Redirected back to *Log In* page with “Incorrect Username and/or Password” message
-1. “Incorrect Username and/or Password” test successful 
 
-#### Testing *New Here?* link:
+1. Click on Log In tab in navbar
+1. Fill in existing username in _Username_ field
+1. Fill in wrong password in _Password_ field
+1. Click _Log In_ button
+1. Redirected back to _Log In_ page with “Incorrect Username and/or Password” message
+1. Fill in false username in _Username_ field
+1. Fill in propper password to another user password in _Password_ field
+1. Redirected back to _Log In_ page with “Incorrect Username and/or Password” message
+1. “Incorrect Username and/or Password” test successful
+
+#### Testing _New Here?_ link:
+
 1. Click on Log In tab in navbar
 1. Scroll down underneath login form
-1. Hover mouse over *Register Account* anchor 
+1. Hover mouse over _Register Account_ anchor
 1. Anchor reacts to hovering
-1. Click anchor 
-1. Clicking anchor brings me to *Register* page
+1. Click anchor
+1. Clicking anchor brings me to _Register_ page
 1. Test successful
 
 ### Testing Register page
+
 #### Register with already existing user:
+
 1. Click on Register tab in navbar
-1. Click *Register* button
-1. Error message appears asking user to fill in *Username* field
-1. Fill in existing username in *Username* field
-1. Click *Register* button
-1. Error message appears asking user to fill in *Password* field
-1. Fill in password to existing username in *Password* field
-1. Click *Register* button
-1. Redirected back to *Register* page with “Username already exists!” message
-1. *Username already exists!* test successful
+1. Click _Register_ button
+1. Error message appears asking user to fill in _Username_ field
+1. Fill in existing username in _Username_ field
+1. Click _Register_ button
+1. Error message appears asking user to fill in _Password_ field
+1. Fill in password to existing username in _Password_ field
+1. Click _Register_ button
+1. Redirected back to _Register_ page with “Username already exists!” message
+1. _Username already exists!_ test successful
 1. Fill in new/ not previously existing username
 1. Fill in new/ not previously existing password
-1. Click *Register* button
+1. Click _Register_ button
 1. Register new user successful, click takes me to new users profile page
-1. Register new user successful 
+1. Register new user successful
 
-#### Testing *Already Registered?* link:
+#### Testing _Already Registered?_ link:
+
 1. Click on Register tab in navbar
 1. Scroll down underneath register form
-1. Hover mouse over *Log In* anchor 
+1. Hover mouse over _Log In_ anchor
 1. Anchor reacts to hovering
-1. Click anchor 
-1. Clicking anchor brings me to *Log In* page
-1. Test successful 
+1. Click anchor
+1. Clicking anchor brings me to _Log In_ page
+1. Test successful
 
 ### Testing Add Book page
+
 #### Testing adding book:
+
 1. Click on Add Book tab in navbar
-1. Click *Add Book* button
-1. Error message appears asking user to select *Book Genre* in selector
+1. Click _Add Book_ button
+1. Error message appears asking user to select _Book Genre_ in selector
 1. Pick Economics
-1. Click *Add Book* button
-1. Error message appears asking user to fill in *Book Name* field
-1. Fill in *Wealth and Poverty*
-1. Click *Add Book* button
-1. Error message appears asking user to fill in *Book Author* field
-1. Fill in *George Gilder*
-1. Click *Add Book* button
-1. Error message appears asking user to fill in *Book amount pages* field
-1. Fill in *256*
-1. Click *Add Book* button
-1. Error message appears asking user to fill in *Book description* field
+1. Click _Add Book_ button
+1. Error message appears asking user to fill in _Book Name_ field
+1. Fill in _Wealth and Poverty_
+1. Click _Add Book_ button
+1. Error message appears asking user to fill in _Book Author_ field
+1. Fill in _George Gilder_
+1. Click _Add Book_ button
+1. Error message appears asking user to fill in _Book amount pages_ field
+1. Fill in _256_
+1. Click _Add Book_ button
+1. Error message appears asking user to fill in _Book description_ field
 1. Fill in book description (too long to include here)
-1. Click *Add Book* button
+1. Click _Add Book_ button
 1. Click takes me back to the Home page with the flash message of “Book Added Successfully!”
 1. Scroll down to bottom of added books
-1. *Wealth and Poverty* is successfully added
+1. _Wealth and Poverty_ is successfully added
 1. Test successful
 
 #### Testing Add Book cancel button:
+
 1. Click on Add Book tab in navbar
-1. Scroll down to *Cancel* button
-1. Click *Cancel* button
+1. Scroll down to _Cancel_ button
+1. Click _Cancel_ button
 1. Click takes me back to Home page
 1. Test successful
 
 ### Testing Profile page
+
 #### Testing book edit:
+
 1. Click on Profile tab in navbar
-1. Scroll down to *Wealth and Poverty* book mentioned above
-1. Click *Book Description* button
-1. Book description text appears 
-1. Click *Book Description* button
+1. Scroll down to _Wealth and Poverty_ book mentioned above
+1. Click _Book Description_ button
+1. Book description text appears
+1. Click _Book Description_ button
 1. Book description text disappears
 1. Book description button test successful
-1. Click *Edit* button
+1. Click _Edit_ button
 1. All information previously added under the book “Wealth and Poverty” appears in all fields and select item
-1. Change *Book Genre* to *History*
-1. Click *Save* button
+1. Change _Book Genre_ to _History_
+1. Click _Save_ button
 1. Click takes me back to a shorter version of the Home page with the flash message of “Book Edited Successfully!”
-1. Scroll down to *Wealth and Poverty*
-1. *Wealth and Poverty* has successfully been changed
-1. Repeat and make changes in every field in *Wealth and Poverty* in edit form individually 
-1. Click *Save* button
+1. Scroll down to _Wealth and Poverty_
+1. _Wealth and Poverty_ has successfully been changed
+1. Repeat and make changes in every field in _Wealth and Poverty_ in edit form individually
+1. Click _Save_ button
 1. Click takes me back to a shorter version of the Home page with the flash message of “Book Edited Successfully!”
-1. Scroll down to *Wealth and Poverty*
-1. *Wealth and Poverty* has successfully been changed
+1. Scroll down to _Wealth and Poverty_
+1. _Wealth and Poverty_ has successfully been changed
 1. Test successful
 
 #### Testing book delete button:
+
 1. Click on Profile tab in navbar
-1. Scroll down to *Wealth and Poverty* book mentioned above
-1. Click *Delete* button
+1. Scroll down to _Wealth and Poverty_ book mentioned above
+1. Click _Delete_ button
 1. Click takes me back to the Home TO PROFILE page with the flash message of “Book Successfully Deleted!”
-1. Scroll down to where *Wealth and Poverty* was previously
-1. *Wealth and Poverty* has successfully been deleted
+1. Scroll down to where _Wealth and Poverty_ was previously
+1. _Wealth and Poverty_ has successfully been deleted
 1. Test successful
 
 ### Testing Log Out tab
-1. Login through * Log In* page 
-1. Arrive on *Profile* page
+
+1. Login through _ Log In_ page
+1. Arrive on _Profile_ page
 1. Click on Log Out tab in navbar
 1. Click takes me back to Log In page with the flash message: “You have been logged out”
 1. Test successful
 
 ### Testing Manage Genres page
+
 #### Testing add new genre:
-1. Log in as *admin*
-1. Arrive on *Profile* page
+
+1. Log in as _admin_
+1. Arrive on _Profile_ page
 1. Click on Manage Genres tab in navbar
-1. Click *Add New Genre* button
-1. Arrive on *Add Genre* page
-1. Write *Fantasy* on *Genre Name* input line
+1. Click _Add New Genre_ button
+1. Arrive on _Add Genre_ page
+1. Write _Fantasy_ on _Genre Name_ input line
 1. Click takes me back to the Manage Genres page with the flash message: “New Genre Added!”
 1. Scroll down to look at existing genres
-1. *Fantasy* has successfully been added
+1. _Fantasy_ has successfully been added
 1. Test successful
 
 #### Testing edit genre:
-1. Log in as *admin*
+
+1. Log in as _admin_
 1. Click on Manage Genres tab in navbar
-1. Click *Edit* button next to *Fantasy* genre added in test above
-1. Arrive on *Edit Genre* page
-1. Change *Fantasy* to *Fanatsyyy* in *Genre Name* input line
-1. Click *Save Genre* button
+1. Click _Edit_ button next to _Fantasy_ genre added in test above
+1. Arrive on _Edit Genre_ page
+1. Change _Fantasy_ to _Fanatsyyy_ in _Genre Name_ input line
+1. Click _Save Genre_ button
 1. Click takes me back to the Manage Genres page with the flash message: “Genre Successfully Updated!”
 1. Scroll down to look at existing genres
-1. *Fantasy* now appears as *Fantasyyy*
+1. _Fantasy_ now appears as _Fantasyyy_
 1. Test successful
 
 #### Testing delete genre:
-1. Log in as *admin*
+
+1. Log in as _admin_
 1. Click on Manage Genres tab in navbar
-1. Click *Delete* button next to *Fantasyyy* genre added in test above
+1. Click _Delete_ button next to _Fantasyyy_ genre added in test above
 1. Click takes me back to the Manage Genres page with the flash message: “Genre Successfully Removed”
 1. Scroll down to look at existing genres
-1. *Fantasyyy* is no longer there
+1. _Fantasyyy_ is no longer there
 1. Test successful
 
 ### Testing footer section
+
 #### Testing footer links:
+
 1. Click on Home tab in navbar
 1. Scroll down to the bottom of the page website
-1. Hover mouse over all three social media icons 
+1. Hover mouse over all three social media icons
 1. Icons react to hovering
-1. Click *Twitter* icon 
-1. Icon open twitter profile in separate browser tab  
-1. Click *Facebook* icon 
+1. Click _Twitter_ icon
+1. Icon open twitter profile in separate browser tab
+1. Click _Facebook_ icon
 1. Icon open facebook profile in separate browser tab
-1. Click *Instagram* icon 
+1. Click _Instagram_ icon
 1. Icon open instagram profile in separate browser tab
-1. Test successful 
-
+1. Test successful
 
 **Screen sizes**
 
@@ -345,8 +374,9 @@ The technologies used when creating this website is as follows:
 
 **Bugs**
 
-- In the add\_book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog* theme and _Material Design for Bootstrap_ styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
-*  The navbar does not stick to the top of the page when scrolling down only while scrolling up, I tried switching around styling in the css file as well as using Bootstrap class names but I can not seem to fix it. I am aiming to resolve  this issue as soon as possible, but as of handing in this project (17/11/20) I have still not found a solution.
+- In the add_book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog\* theme and _Material Design for Bootstrap_ styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
+
+* The navbar does not stick to the top of the page when scrolling down only while scrolling up, I tried switching around styling in the css file as well as using Bootstrap class names but I can not seem to fix it. I am aiming to resolve this issue as soon as possible, but as of handing in this project (17/11/20) I have still not found a solution.
 
 ## Deployment
 
