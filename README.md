@@ -26,7 +26,7 @@ The mockups I have created for this project are somewhat lacking in creativity, 
 
 **Navbar**
 
-- At the top of the page there is a navigation bar that gives you different options depending on your logged in status. When not logged in to the page the user is presented with the navigation items of: Home, Log In and Register which all bring you to the connected template when clicked. Logged in to the website however, the user will see the same Home navigation item as well as the additional items of Profile, Add Book and Log Out. The admin of the website, currently under the username AdminJE, will have the navigation item of: Manage Genres as well as the Home, Profile, Add Book and Log Out option.
+- At the top of the page there is a navigation bar that gives you different options depending on your logged in status. When not logged in to the page the user is presented with the navigation items of: Home, Log In and Register which all bring you to the connected template when clicked. Logged in to the website however, the user will see the same Home navigation item as well as the additional items of Profile, Add Book and Log Out. The admin of the website, currently under the username admin, will have the navigation item of: Manage Genres as well as the Home, Profile, Add Book and Log Out option.
 
 **Home page**
 
@@ -42,11 +42,11 @@ The mockups I have created for this project are somewhat lacking in creativity, 
 
 **Profile page**
 
-- The profile page is reached either through the Log In or Register page, and is the first page the user is taken to after logging in. At the top of the page is a header displaying the words: “Profile of ‘Users Name’”. Below are the books the user in question has added to the website with the same display structure as on the Home page: displaying the book: genre, name, author, amount of pages, link and personalized description as well as an edit and delete function.
+- The profile page is reached either through the Log In or Register page, and is the first page the user is taken to after logging in. At the top of the page is a header displaying the words: Profile of _Users Name_. Below are the books the user in question has added to the website with the same display structure as on the Home page: displaying the book: genre, name, author, amount of pages, link and personalized description as well as an edit and delete function.
 
 **Add Book page**
 
-- The Add Book page is the page where the users can add new books. The page has an Add Book heading, underneath is a form element. The form first asks under what genre the book fits in, as this project is submitted there are six available genres to choose from. After this there are text inputs asking for the book: name, author, amount of pages, link and a personalized description. At the bottom there is a submit button with the text "Add Book".
+- The Add Book page is the page where the users can add new books. The page has an Add Book heading, underneath there is a form element. The form first asks under what genre the book fits in, as this project is submitted there are six available genres to choose from. After this there are text inputs asking for the book: name, author, amount of pages, link and a personalized description. At the bottom there is a submit button with the text "Add Book".
 
 **Manage Genres page**
 
@@ -109,7 +109,7 @@ The technologies used when creating this website is as follows:
 1. Hover mouse over all navbar anchor links
 1. Home, Log In, Register, Profile, Add Book, Add Genre and Log Out section all react by changing color when hovered over
 1. Click Home, Log In, Register, Profile, Add Book, Add Genre and Log Out navitems
-1. All navbar items connects to the top of intended page
+1. All navbar items connects to intended page
 1. Test successful
 
 ### Testing Home page
@@ -257,6 +257,9 @@ The technologies used when creating this website is as follows:
 1. Error message appears asking user to fill in _Book amount pages_ field
 1. Fill in _256_
 1. Click _Add Book_ button
+1. Error message appears asking user to fill in _Book link_ field
+1. Fill in book Amazon link
+1. Click _Add Book_ button
 1. Error message appears asking user to fill in _Book description_ field
 1. Fill in book description (too long to include here)
 1. Click _Add Book_ button
@@ -303,14 +306,14 @@ The technologies used when creating this website is as follows:
 1. Click on Profile tab in navbar
 1. Scroll down to _Wealth and Poverty_ book mentioned above
 1. Click _Delete_ button
-1. Click takes me back to the Home TO PROFILE page with the flash message of “Book Successfully Deleted!”
+1. Click takes me back to the Home page with the flash message of “Book Successfully Deleted!”
 1. Scroll down to where _Wealth and Poverty_ was previously
 1. _Wealth and Poverty_ has successfully been deleted
 1. Test successful
 
 ### Testing Log Out tab
 
-1. Login through _ Log In_ page
+1. Login through _Log In_ page
 1. Arrive on _Profile_ page
 1. Click on Log Out tab in navbar
 1. Click takes me back to Log In page with the flash message: “You have been logged out”
@@ -376,7 +379,7 @@ The technologies used when creating this website is as follows:
 
 **Bugs**
 
-- In the add*book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog\* theme and \_Material Design for Bootstrap* styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
+- In the add_book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog\* theme and \_Material Design for Bootstrap\* styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
 
 * The navbar does not stick to the top of the page when scrolling down only while scrolling up, I tried switching around styling in the css file as well as using Bootstrap class names but I can not seem to fix it. I am aiming to resolve this issue as soon as possible, but as of handing in this project (17/11/20) I have still not found a solution.
 
