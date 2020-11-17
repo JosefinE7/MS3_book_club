@@ -14,6 +14,8 @@ The Conservative Book Club allows people to gather around great books within gen
 - As a person who is really new to the conservative point of view, I would like some book recommendations to get me started and really understand the core values from within all aspects of the point of view, ranging from economic to cultural.
 - As the admin of this site I love reading, in today's age I am able to take my passion for books and make a profit through affiliate links if the people who visit my site are interested in purchasing the books that get recommended on my site. What a great way to combine work and my favorite hobby!
 
+#### Mockups
+
 ![mockup 1](static/img/mockup_1.jpg)
 ![mockup 2](static/img/mockup_2.jpg)
 ![mockup 3](static/img/mockup_3.jpg)
@@ -374,7 +376,7 @@ The technologies used when creating this website is as follows:
 
 **Bugs**
 
-- In the add_book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog\* theme and _Material Design for Bootstrap_ styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
+- In the add*book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog\* theme and \_Material Design for Bootstrap* styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
 
 * The navbar does not stick to the top of the page when scrolling down only while scrolling up, I tried switching around styling in the css file as well as using Bootstrap class names but I can not seem to fix it. I am aiming to resolve this issue as soon as possible, but as of handing in this project (17/11/20) I have still not found a solution.
 
