@@ -99,7 +99,15 @@ The technologies used when creating this website is as follows:
   - The project uses the Mongo database to store and retrieve data from the website.
 
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+
   - The project uses Flask for Python functionality.
+
+- [Dnspython](https://www.dnspython.org/)
+
+  - The project uses dnspython for Python functionality.
+
+- [PyMongo](https://flask.palletsprojects.com/en/1.1.x/)
+  - The project uses PyMongo for interacting with MongoDB database from Python.
 
 ## Testing
 
@@ -429,7 +437,7 @@ One file that will not be added to the project when downloading or cloning is th
 - os.environ.setdefault("IP", "the_IP_address_you_put_into_MongoDB")
 - os.environ.setdefault("PORT", "5000") - The "PORT" and "5000" is the standard used for Flask applications
 - os.environ.setdefault("SECRET_KEY", "your_secret_key") - the secret key is used for flash() and session() functions from Flask so pick a value safer than \_your_secret_key.
-- os.environ.setdefault("MONGO_URI", "LINK") - To find your MONGO_URI file go back to MongoDB, on the \_Clusters page click the connect button on your cluster. You will be presented with different options but pick the _Connect your Application_ option. Select Python under the _Select your driver and person_ and pick the appropriate version for your setup. Below this there will be a link, the link has your username and cluster details already, but you need to fill in the database name and password directly in the link (the username and password comes from the Database Access page, NOT with your login credentials to the MongoDB website). Paste this link as a value to your MONGO_URI key.
+- os.environ.setdefault("MONGO_URI", "LINK") - To find your MONGO_URI file go back to MongoDB, on the _Clusters page_ click the connect button on your cluster. You will be presented with different options but pick the _Connect your Application_ option. Select Python under the _Select your driver and person_ and pick the appropriate version for your setup. Below this there will be a link, the link has your username and cluster details already, but you need to fill in the database name and password directly in the link (the username and password comes from the Database Access page, NOT with your login credentials to the MongoDB website). Paste this link as a value to your MONGO_URI key.
 - os.environ.setdefault("MONGO_DBNAME", "your_database_name")
 
 **Deploying the project**
