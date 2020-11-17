@@ -3,16 +3,14 @@
 
 <hr class="mt-5 mb-5" />
 
+<!-- Card element from Material Design for Bootstrap Card element -->
 <div class="row">
 	<!-- Card -->
 	<div class="card col-md-8 offset-md-2">
 		<!-- Card body -->
 		<div class="card-body">
 			<!-- Material form register -->
-			<form
-				method="POST"
-				action="{{ url_for('edit_genre', genre_id=genre._id) }}"
-			>
+			<form method="POST" action="{{ url_for('edit_genre', genre_id=genre._id) }}">
 				<!-- Material input genre name -->
 				<div class="md-form">
 					<i class="fa fa-folder-open prefix grey-text"></i>
@@ -34,9 +32,8 @@
 						<i class="far fa-edit right"></i>
 						Save Genre
 					</button>
-					<a class="btn btn-danger" href="{{ url_for('manage_genres') }}"
-						><i class="fas fa-times-circle"></i> Cancel</a
-					>
+					<a class="btn btn-danger" href="{{ url_for('manage_genres') }}"><i class="fas fa-times-circle"></i>
+						Cancel</a>
 				</div>
 			</form>
 			<!-- Material form register -->

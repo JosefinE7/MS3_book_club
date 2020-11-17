@@ -5,12 +5,12 @@
 
 <div class="row">
 	<div class="card col-md-4 offset-md-4 py-2 mt-3">
-		<a class="btn btn-info text-center btn-lg" href="{{ url_for('add_genre') }}"
-			><i class="fas fa-plus"></i> Add New Genre</a
-		>
+		<a class="btn btn-info text-center btn-lg" href="{{ url_for('add_genre') }}"><i class="fas fa-plus"></i> Add New
+			Genre</a>
 	</div>
 </div>
 
+<!-- Card element from Material Design for Bootstrap Card element -->
 <div class="row">
 	{% for genre in genres %}
 	<!-- Card -->
@@ -25,16 +25,10 @@
 			</div>
 			<!-- Submit button -->
 			<div class="text-center py-2 mt-1">
-				<a
-					href="{{ url_for('edit_genre', genre_id=genre._id) }}"
-					class="btn btn-info btn-sm"
-					><i class="fas fa-pen"></i> Edit</a
-				>
-				<a
-					href="{{ url_for('delete_genre', genre_id=genre._id) }}"
-					class="btn btn-danger btn-sm"
-					><i class="fas fa-trash-alt"></i> Delete</a
-				>
+				<a href="{{ url_for('edit_genre', genre_id=genre._id) }}"
+					class="btn btn-info btn-sm"><i class="fas fa-pen"></i> Edit</a>
+				<a href="{{ url_for('delete_genre', genre_id=genre._id) }}"
+					class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
 			</div>
 			<!-- Material form register -->
 		</div>
