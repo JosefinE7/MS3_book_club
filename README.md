@@ -379,7 +379,7 @@ The technologies used when creating this website is as follows:
 
 **Bugs**
 
-- In the add_book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog\* theme and \_Material Design for Bootstrap\* styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
+- In the add*book.html I tried to add an icon element in front of the select element for picking the book genre, for some reason the icon would not appear or would overlap the select element. I tried every way I could think of to adjust it properly to be able to keep the styling of the form consistent, however I could not figure it out. I suspect there is some kind of conflict between the \_Clean Blog* theme and _Material Design for Bootstrap_ styling, but as of the time of handing this project in I could not figure it out. The book genre selector is therefore without icon.
 
 * The navbar does not stick to the top of the page when scrolling down only while scrolling up, I tried switching around styling in the css file as well as using Bootstrap class names but I can not seem to fix it. I am aiming to resolve this issue as soon as possible, but as of handing in this project (17/11/20) I have still not found a solution.
 
@@ -407,7 +407,7 @@ The technologies used when creating this website is as follows:
 
 #### Cloning the MS3_book_club project
 
-You can gain access to my project by going to GitHub pages, below is a step by step process allowing you to download my project and make it your own. One of the things provided by the Code Institute is “gitpod-full-template” (https://github.com/Code-Institute-Org/gitpod-full-template) which provided me with useful extensions, shortcuts etc.
+You can gain access to my project by going to GitHub pages, below is a step by step process allowing you to download my project and make it your own. One of the things provided by the Code Institute is [gitpod-full-template](https://github.com/Code-Institute-Org/gitpod-full-template) which provided me with useful extensions, shortcuts etc.
 
 If you would like to download and work on this project separately, make sure to:
 
@@ -428,8 +428,8 @@ One file that will not be added to the project when downloading or cloning is th
 
 - os.environ.setdefault("IP", "the_IP_address_you_put_into_MongoDB")
 - os.environ.setdefault("PORT", "5000") - The "PORT" and "5000" is the standard used for Flask applications
-- os.environ.setdefault("SECRET*KEY", "your_secret_key") - the secret key is used for flash() and session() functions from Flask so pick a value safer than \_your_secret_key*.
-- os.environ.setdefault("MONGO*URI", "LINK") - To find your MONGO_URI file go back to MongoDB, on the \_Clusters* page click the connect button on your cluster. You will be presented with different options but pick the _Connect your Application_ option. Select Python under the _Select your driver and person_ and pick the appropriate version for your setup. Below this there will be a link, the link has your username and cluster details already, but you need to fill in the database name and password directly in the link (the username and password comes from the Database Access page, NOT with your login credentials to the MongoDB website). Paste this link as a value to your _MONGO_URI_ key.
+- os.environ.setdefault("SECRET_KEY", "your_secret_key") - the secret key is used for flash() and session() functions from Flask so pick a value safer than \_your_secret_key.
+- os.environ.setdefault("MONGO_URI", "LINK") - To find your MONGO_URI file go back to MongoDB, on the \_Clusters page click the connect button on your cluster. You will be presented with different options but pick the _Connect your Application_ option. Select Python under the _Select your driver and person_ and pick the appropriate version for your setup. Below this there will be a link, the link has your username and cluster details already, but you need to fill in the database name and password directly in the link (the username and password comes from the Database Access page, NOT with your login credentials to the MongoDB website). Paste this link as a value to your MONGO_URI key.
 - os.environ.setdefault("MONGO_DBNAME", "your_database_name")
 
 **Deploying the project**
